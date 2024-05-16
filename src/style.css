@@ -2,18 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer components {
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
-  button:hover {
+  .hover-gradient {
+    @apply bg-gradient-to-r from-yellow-300 to-red-500 opacity-90;
+  }
+  button {
     transition: .3s linear;
   }
   .bg-options {
     @apply bg-no-repeat bg-center bg-full;
   }
+  .down-text {
+    @apply block text-slate-400 max-w-[968px] mx-auto text-center mt-16 mb-20;
+  }
+  
+
   /* burger */
   .burger {
     position: relative;

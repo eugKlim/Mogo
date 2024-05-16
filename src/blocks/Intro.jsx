@@ -4,8 +4,8 @@ const Intro = () => {
   return (
     <div className="bg-intro-bg bg-options max-w-[2560px] mt-[-100px] container pb-9 text-white pt-[190px] sm:bg-cover">
       <div>
-        <h2 className="upTitle text-white md:text-6xl sm:text-4xl">Creative Template</h2>
-        <h3 className="title text-white text-7xl sm:text-5xl title-line-intro">
+        <h2 className="upTitle text-white mb-8 md:text-6xl sm:text-4xl">Creative Template</h2>
+        <h3 className="title text-white md:text-7xl sm:text-5xl title-line-intro">
           Welcome <span className="block">to MoGo</span>
         </h3>
 

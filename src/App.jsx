@@ -5,6 +5,8 @@ import './output.css';
 import Header from './blocks/Header';
 import Footer from './blocks/Footer';
 import Intro from './blocks/Intro';
+import About from './blocks/About';
+import Facts from './blocks/Facts';
 
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
       <Header />
       <div> 
         <Intro />
+        <About />
+        <Facts />
       </div>
       <Footer />
     </div>
