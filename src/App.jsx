@@ -7,6 +7,8 @@ import Footer from './blocks/Footer';
 import Intro from './blocks/Intro';
 import About from './blocks/About';
 import Facts from './blocks/Facts';
+import Service from './blocks/Service';
+import Feature from './blocks/Feature';
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
         <Intro />
         <About />
         <Facts />
+        <Service />
+        <Feature />
       </div>
       <Footer />
     </div>

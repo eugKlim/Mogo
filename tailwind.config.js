@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.jsx'],
+  content: [
+    './index.html',
+    './src/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -12,6 +15,7 @@ export default {
       },
       backgroundImage: {
         'intro-bg': "url('/image/intro/intro-bg.jpg')",
+        'feature-bg': "url('/image/feature/feature-bg.jpg')",
       },
       backgroundSize: {
         'full': '100% 100%',
