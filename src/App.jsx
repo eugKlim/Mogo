@@ -9,6 +9,7 @@ import About from './blocks/About';
 import Facts from './blocks/Facts';
 import Service from './blocks/Service';
 import Feature from './blocks/Feature';
+import What from './blocks/What';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Facts />
         <Service />
         <Feature />
+        <What />
       </div>
       <Footer />
     </div>
