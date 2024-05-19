@@ -11,6 +11,8 @@ import Service from './blocks/Service';
 import Feature from './blocks/Feature';
 import What from './blocks/What';
 import Quote from './blocks/Quote';
+import Team from './blocks/Team';
+import Logos from './blocks/Logos';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Feature />
         <What />
         <Quote />
+        <Team />
+        <Logos />
       </div>
       <Footer />
     </div>
