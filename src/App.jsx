@@ -10,19 +10,20 @@ import Facts from './blocks/Facts';
 import Service from './blocks/Service';
 import Feature from './blocks/Feature';
 import What from './blocks/What';
-
+import Quote from './blocks/Quote';
 
 function App() {
   return (
     <div className="h-screen grid grid-rows-[auto_1fr_auto] font-RobotoRegular">
       <Header />
-      <div> 
+      <div>
         <Intro />
         <About />
         <Facts />
         <Service />
         <Feature />
         <What />
+        <Quote />
       </div>
       <Footer />
     </div>

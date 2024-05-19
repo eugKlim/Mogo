@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* scroll custom */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -21,11 +22,29 @@
     margin: 0 auto;
     padding: 0 20px;
   }
+  /* scroll custom / */
+
+  /* slider */
+  .splide__arrow {
+    background-color: #7de5de !important;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1 !important;
+  }
+  .splide__arrow:hover {
+    background-color: #1ec4b9 !important;
+  }
+  /* slider */
+
   .hover-gradient {
     @apply bg-gradient-to-r from-yellow-300 to-red-500 opacity-90;
   }
   button {
-    transition: .3s linear;
+    transition: 0.3s linear;
   }
   .bg-options {
     @apply bg-no-repeat bg-center bg-full;
@@ -33,7 +52,6 @@
   .down-text {
     @apply block text-slate-400 max-w-[968px] mx-auto text-center mt-16 mb-20;
   }
-  
 
   /* burger */
   .burger {
@@ -47,7 +65,7 @@
     background-color: #fff;
     position: absolute;
     left: 0;
-    transition: .4s linear;
+    transition: 0.4s linear;
   }
   .burger span:first-child {
     top: 0;
@@ -74,9 +92,9 @@
     transform: rotate(35deg);
     opacity: 0;
   }
-/* burger / */
+  /* burger / */
 
-/* title */
+  /* title */
   .upTitle {
     @apply text-slate-900 font-KaushanScripts text-3xl text-center mb-2;
   }
@@ -84,10 +102,12 @@
     @apply text-slate-900 font-MontserratBold text-3xl text-center uppercase;
   }
 
-  .title-line, .title-line-intro {
+  .title-line,
+  .title-line-intro {
     position: relative;
   }
-  .title-line::before, .title-line-intro::before {
+  .title-line::before,
+  .title-line-intro::before {
     content: '';
     width: 60px;
     height: 3px;
@@ -101,9 +121,25 @@
     background-color: #fff;
     bottom: -50px;
   }
-/* title */
+  /* title */
 
-/* nav */
+  /* left line */
+  .left-line {
+    position: relative;
+  }
+  .left-line::before {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #f38181;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* left line */
+
+  /* nav */
   .navigation {
     position: relative;
   }

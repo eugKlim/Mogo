@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './index.html',
-    './src/**/*.{js,jsx,ts,tsx}',
-  ],
+  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       fontFamily: {
@@ -18,17 +15,15 @@ export default {
         'feature-bg': "url('/image/feature/feature-bg.jpg')",
       },
       backgroundSize: {
-        'full': '100% 100%',
+        full: '100% 100%',
       },
       screens: {
-        sm:'320px',
+        sm: '320px',
         md: '600px',
         lg: '800px',
         xl: '1000px',
-        
-      }
+      },
     },
   },
   plugins: [],
-}
-
+};
