@@ -13,6 +13,8 @@ import What from './blocks/What';
 import Quote from './blocks/Quote';
 import Team from './blocks/Team';
 import Logos from './blocks/Logos';
+import Testimonial from './blocks/Testimonial';
+import Work from './blocks/Work';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Quote />
         <Team />
         <Logos />
+        <Work />
+        <Testimonial />
       </div>
       <Footer />
     </div>

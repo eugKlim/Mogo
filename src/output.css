@@ -800,6 +800,10 @@ button {
   position: relative;
 }
 
+.left-0 {
+  left: 0px;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -808,9 +812,18 @@ button {
   z-index: 50;
 }
 
+.row-span-2 {
+  grid-row: span 2 / span 2;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .my-4 {
@@ -919,6 +932,14 @@ button {
   height: 146px;
 }
 
+.h-\[150px\] {
+  height: 150px;
+}
+
+.h-\[200px\] {
+  height: 200px;
+}
+
 .h-\[23px\] {
   height: 23px;
 }
@@ -979,8 +1000,20 @@ button {
   width: 100%;
 }
 
+.min-w-\[150px\] {
+  min-width: 150px;
+}
+
+.min-w-\[190px\] {
+  min-width: 190px;
+}
+
 .max-w-\[1280px\] {
   max-width: 1280px;
+}
+
+.max-w-\[1900px\] {
+  max-width: 1900px;
 }
 
 .max-w-\[2560px\] {
@@ -993,6 +1026,10 @@ button {
 
 .max-w-\[600px\] {
   max-width: 600px;
+}
+
+.max-w-\[780px\] {
+  max-width: 780px;
 }
 
 .max-w-\[840px\] {
@@ -1010,6 +1047,10 @@ button {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-grab {
+  cursor: grab;
 }
 
 .cursor-pointer {
@@ -1172,11 +1213,6 @@ button {
   padding-bottom: 2.5rem;
 }
 
-.py-14 {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-}
-
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1197,8 +1233,12 @@ button {
   padding-bottom: 98px;
 }
 
-.pb-5 {
-  padding-bottom: 1.25rem;
+.pb-11 {
+  padding-bottom: 2.75rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
 }
 
 .pb-9 {
@@ -1221,8 +1261,16 @@ button {
   padding-top: 0.25rem;
 }
 
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
 .pt-4 {
   padding-top: 1rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .pt-\[190px\] {
@@ -1239,14 +1287,6 @@ button {
 
 .pt-\[98px\] {
   padding-top: 98px;
-}
-
-.pb-7 {
-  padding-bottom: 1.75rem;
-}
-
-.pb-8 {
-  padding-bottom: 2rem;
 }
 
 .text-center {
@@ -1345,6 +1385,12 @@ button {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-opacity {
+  transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1454,6 +1500,10 @@ button {
   color: rgb(234 179 8 / var(--tw-text-opacity));
 }
 
+.active\:cursor-grabbing:active {
+  cursor: grabbing;
+}
+
 @media (min-width: 320px) {
   .sm\:mb-7 {
     margin-bottom: 1.75rem;
@@ -1483,12 +1533,36 @@ button {
     width: 100vw;
   }
 
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sm\:flex-wrap {
     flex-wrap: wrap;
   }
 
   .sm\:justify-center {
     justify-content: center;
+  }
+
+  .sm\:bg-slate-300 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+  }
+
+  .sm\:bg-gray-300 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+  }
+
+  .sm\:bg-gray-200 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  }
+
+  .sm\:bg-gray-100 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
   }
 
   .sm\:bg-cover {
@@ -1523,6 +1597,10 @@ button {
     width: 100vw;
   }
 
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .md\:flex-nowrap {
     flex-wrap: nowrap;
   }
@@ -1536,6 +1614,11 @@ button {
   .md\:bg-gray-300 {
     --tw-bg-opacity: 1;
     background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+  }
+
+  .md\:bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
   .md\:py-10 {
@@ -1569,6 +1652,14 @@ button {
 
   .lg\:w-\[150px\] {
     width: 150px;
+  }
+
+  .lg\:w-\[190px\] {
+    width: 190px;
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:items-center {
@@ -1623,5 +1714,9 @@ button {
     --tw-space-x-reverse: 0;
     margin-right: calc(1.5rem * var(--tw-space-x-reverse));
     margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .group:hover .xl\:group-hover\:opacity-90 {
+    opacity: 0.9;
   }
 }
