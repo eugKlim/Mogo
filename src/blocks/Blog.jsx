@@ -13,7 +13,7 @@ const Blog = () => {
             <img src="/image/blog/1.jpg" alt="image" />
             <div className="absolute bottom-4 -left-2 inline-block text-center bg-cyan-400 text-white py-1 px-2">
               <div className="uppercase font-MontserratBold text-2xl">
-                15 <span className="block font-RobotoLightItalic text-base">Jan</span>
+                5 <span className="block font-RobotoLightItalic text-base">Jan</span>
               </div>
             </div>
           </div>
@@ -29,7 +29,7 @@ const Blog = () => {
               </div>
               <div className="flex space-x-2 items-center">
                 <img src="/image/global/comment-ico.svg" alt="icon comment" className="h-[15px]" />
-                <span className="font-RobotoLightItalic text-base">23</span>
+                <span className="font-RobotoLightItalic text-base">8</span>
               </div>
             </div>
           </div>
@@ -40,7 +40,7 @@ const Blog = () => {
             <img src="/image/blog/2.jpg" alt="image" />
             <div className="absolute bottom-4 -left-2 inline-block text-center bg-cyan-400 text-white py-1 px-2">
               <div className="uppercase font-MontserratBold text-2xl">
-                15 <span className="block font-RobotoLightItalic text-base">Jan</span>
+                8 <span className="block font-RobotoLightItalic text-base">Jan</span>
               </div>
             </div>
           </div>

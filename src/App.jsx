@@ -1,5 +1,5 @@
 import './fonts.css';
-import './output.css';
+import './style.css';
 
 // block:
 import Header from './blocks/Header';
@@ -17,6 +17,8 @@ import Testimonial from './blocks/Testimonial';
 import Work from './blocks/Work';
 import Say from './blocks/Say';
 import Blog from './blocks/Blog';
+import Map from './blocks/Map';
+import Info from './blocks/Info';
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
         <Testimonial />
         <Say />
         <Blog />
+        <Map />
+        <Info />
       </div>
       <Footer />
     </div>

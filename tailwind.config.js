@@ -14,6 +14,7 @@ export default {
         'intro-bg': "url('/image/intro/intro-bg.jpg')",
         'feature-bg': "url('/image/feature/feature-bg.jpg')",
         'say-bg': "url('/image/say/say-bg.jpg')",
+        'map-bg': "url('/image/map/map-bg.jpg')",
       },
       backgroundSize: {
         full: '100% 100%',

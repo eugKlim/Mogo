@@ -1,0 +1,114 @@
+import React from 'react';
+import FacebookIco from '../../public/image/global/facebook-ico';
+import TwitterIco from '../../public/image/global/twitter-ico';
+import PinterestIco from '../../public/image/global/pinterest-ico';
+import InstagramIco from '../../public/image/global/instagram-ico';
+import YoutubeIco from '../../public/image/global/youtube-ico';
+import DribbleIco from '../../public/image/global/dribble-ico';
+
+const Info = () => {
+  return (
+    <div className="container pt-16 pb-20 flex justify-center flex-wrap space-x-12 sm:flex-wrap-reverse">
+      {/* 1 */}
+      <div className="xl:w-1/3 mb-10 md:max-w-2/4">
+        <h2 className="font-MontserratBold text-4xl text-gray-500">MoGo</h2>
+        <p className="my-8 text-gray-500 font-RobotoRegular">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+        <div className="">
+          <p className="font-MontserratBold text-lg">
+            15k <span className="font-MontserratRegular text-base text-gray-400">followers</span>
+          </p>
+
+          <div className="w-full h-[1px] bg-slate-300 my-2 " />
+
+          <div className="flex items-center">
+            <span className="font-RobotoLightItalic text-gray-400 pr-4">Follow Us:</span>
+
+            <div className="space-x-1">
+              <a href="#" className="inline-block p-2 bg-yellow-500 text-red-500 hover:bg-red-500 hover:text-white rounded-3xl" title="link Facebook">
+                <FacebookIco className="w-4 h-4" />
+              </a>
+              <a href="#" className="inline-block p-2 bg-yellow-500 text-red-500 hover:bg-red-500 hover:text-white rounded-3xl" title="link Twitter">
+                <TwitterIco className="w-4 h-4" />
+              </a>
+              <a href="#" className="inline-block p-2 bg-yellow-500 text-red-500 hover:bg-red-500 hover:text-white rounded-3xl" title="link Pinterest">
+                <PinterestIco className="w-4 h-4" />
+              </a>
+              <a href="#" className="inline-block p-2 bg-yellow-500 text-red-500 hover:bg-red-500 hover:text-white rounded-3xl" title="link Instagram">
+                <InstagramIco className="w-4 h-4" />
+              </a>
+              <a href="#" className="inline-block p-2 bg-yellow-500 text-red-500 hover:bg-red-500 hover:text-white rounded-3xl" title="link Youtube">
+                <YoutubeIco className="w-4 h-4" />
+              </a>
+              <a href="#" className="inline-block p-2 bg-yellow-500 text-red-500 hover:bg-red-500 hover:text-white rounded-3xl" title="link Dribble">
+                <DribbleIco className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="mt-10 flex">
+          <input type="text" className="border p-2 rounded-l-xl" placeholder="Your Email..." />
+          <button className="uppercase font-MontserratBold px-4 bg-emerald-400 border border-emerald-400 py-2 -ml-1 text-white hover:bg-emerald-800">Subscribe</button>
+        </div>
+      </div>
+      {/* 2 */}
+      <div className="xl:w-1/3 mb-10">
+        <h3 className="uppercase mb-10">blogs</h3>
+
+        <div className="">
+          <a href="#" className="flex items-center mb-5">
+            <div className="">
+              <img src="/image/info/blogs/1.jpg" alt="image" className="min-w-28" />
+            </div>
+            <div className="ml-3">
+              <h4 className="uppercase text-gray-500 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing</h4>
+              <p className="font-RobotoLightItalic text-gray-400">Jan 9, 2016</p>
+            </div>
+          </a>
+
+          <a href="#" className="flex items-center mb-5">
+            <div className="">
+              <img src="/image/info/blogs/2.jpg" alt="image" className="min-w-28" />
+            </div>
+            <div className="ml-3">
+              <h4 className="uppercase text-gray-500 mb-2">Consectetur adipiscing elit, sed do eiusmod tempor</h4>
+              <p className="font-RobotoLightItalic text-gray-400">Jan 19, 2016</p>
+            </div>
+          </a>
+
+          <a href="#" className="flex items-center mb-5">
+            <div className="">
+              <img src="/image/info/blogs/3.jpg" alt="image" className="min-w-28" />
+            </div>
+            <div className="ml-3">
+              <h4 className="uppercase text-gray-500 mb-2">sed do eiusmod tempor incididunt ut labore</h4>
+              <p className="font-RobotoLightItalic text-gray-400">Jan 1, 2016</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      {/* 3 */}
+      <div className="mb-10">
+        <h3 className="uppercase mb-10">instagram</h3>
+
+        <div className="grid grid-cols-[repeat(3,88px)] gap-1">
+          <img src="/image/info/instagram/1.jpg" alt="image" />
+          <img src="/image/info/instagram/2.jpg" alt="image" />
+          <img src="/image/info/instagram/3.jpg" alt="image" />
+          <img src="/image/info/instagram/4.jpg" alt="image" />
+          <img src="/image/info/instagram/5.jpg" alt="image" />
+          <img src="/image/info/instagram/6.jpg" alt="image" />
+          <img src="/image/info/instagram/7.jpg" alt="image" />
+          <img src="/image/info/instagram/8.jpg" alt="image" />
+          <img src="/image/info/instagram/9.jpg" alt="image" />
+        </div>
+        <a href="#" className="font-RobotoLightItalic text-slate-500 mt-3 inline-block">
+          View more photos
+        </a>
+      </div>
+      {/* / */}
+    </div>
+  );
+};
+
+export default Info;
