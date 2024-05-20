@@ -13,6 +13,7 @@ export default {
       backgroundImage: {
         'intro-bg': "url('/image/intro/intro-bg.jpg')",
         'feature-bg': "url('/image/feature/feature-bg.jpg')",
+        'say-bg': "url('/image/say/say-bg.jpg')",
       },
       backgroundSize: {
         full: '100% 100%',

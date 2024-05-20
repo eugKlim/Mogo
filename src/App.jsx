@@ -15,6 +15,8 @@ import Team from './blocks/Team';
 import Logos from './blocks/Logos';
 import Testimonial from './blocks/Testimonial';
 import Work from './blocks/Work';
+import Say from './blocks/Say';
+import Blog from './blocks/Blog';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
         <Logos />
         <Work />
         <Testimonial />
+        <Say />
+        <Blog />
       </div>
       <Footer />
     </div>
