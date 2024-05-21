@@ -1,5 +1,6 @@
 import React from 'react';
 import Accordion from '../components/accordion/Accordion';
+import Title from '../components/title/Title';
 
 const What = () => {
   const whatAccordion = [
@@ -24,10 +25,8 @@ const What = () => {
   ];
 
   return (
-    <div className="py-[70px] container">
-      <h2 className="upTitle">Service</h2>
-      <h3 className="title title-line">what we do</h3>
-      <p className="down-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <section className="pb-[70px] container">
+      <Title uptitle="Service" title="what we do" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
 
       <div className="xl:flex xl:items-center xl:space-x-6">
         <div className="xl:w-1/2 sm:flex sm:justify-center">
@@ -38,7 +37,7 @@ const What = () => {
           <Accordion items={whatAccordion} />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
