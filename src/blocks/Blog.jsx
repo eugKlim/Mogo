@@ -33,13 +33,13 @@ const Blog = () => {
   ];
 
   return (
-    <section className="pb-5 container">
+    <section className="pb-20 container">
       <Title uptitle="Follow Us" title="Latest Blog" />
 
-      <div className="flex sm:flex-wrap sm:justify-center xl:flex-nowrap justify-between space-x-8">
+      <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-7 auto-cols-auto">
         {blogCardData.map((data, index) => {
           return (
-            <div className="max-w-[340px] mb-20" key={index}>
+            <div className="max-w-[340px] mx-auto" key={index}>
               <div className="relative">
                 <img src={data.image} alt="image" />
                 <div className="absolute bottom-4 -left-2 inline-block text-center bg-cyan-400 text-white py-1 px-2">

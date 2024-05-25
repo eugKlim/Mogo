@@ -5,12 +5,12 @@ const Testimonial = () => {
   const testimonialData = [
     {
       image: '/image/testimonial/image.png',
-      text: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”',
+      text: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”',
       name: 'Jon Doe',
     },
     {
       image: '/image/testimonial/image.png',
-      text: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Ut enim ad minim veniam, quis nostrud exercitation.”',
+      text: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”',
       name: 'Anna Doe',
     },
     {
@@ -21,7 +21,7 @@ const Testimonial = () => {
   ];
 
   const testimonialSlides = testimonialData.map((data, index) => (
-    <div className="pt-10 mx-auto lg:flex lg:items-center md:w-10/12" key={index}>
+    <div className="py-10 mx-auto lg:flex lg:items-center md:w-10/12" key={index}>
       <div className="lg:w-[190px] sm:w-full sm:flex sm:justify-center sm:mb-7">
         <img src={data.image} alt="Image" className="min-w-[190px] h-[200px]" />
       </div>

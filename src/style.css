@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body.noScroll {
+  overflow: hidden;
+}
+
 /* scroll custom */
 ::-webkit-scrollbar {
   width: 10px;
@@ -16,6 +20,56 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #157664;
 }
+
+/* popup */
+.popup-overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  cursor: default;
+}
+.popup-overlay-enter {
+  opacity: 0;
+}
+.popup-overlay-enter-active {
+  opacity: 1;
+  transition: opacity 300ms, transform 300ms;
+}
+.popup-overlay-exit {
+  opacity: 1;
+}
+.popup-overlay-exit-active {
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.close-button {
+  position: absolute;
+  right: 0;
+  padding: 5px 10px;
+  background-color: #9d0909;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+.close-button:hover {
+  background-color: #f50b0b;
+}
+.popup-content {
+  min-height: 500px;
+  background-color: #ffffff;
+  position: relative;
+}
+/* / popup */
+
 /* scroll custom / */
 @layer components {
   .container {
@@ -38,8 +92,7 @@
   .splide__arrow:hover {
     background-color: #1ec4b9 !important;
   }
-  /* slider */
-
+  /* / slider */
   .hover-gradient {
     @apply bg-gradient-to-r from-yellow-300 to-red-500 opacity-90;
   }

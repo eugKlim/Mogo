@@ -24,7 +24,7 @@ const About = () => {
       <div className="flex flex-wrap justify-center space-x-2 text-white">
         {aboutCardData.map((data, index) => {
           return (
-            <div className="w-[380px] h-[250px] relative bg-cyan-400 group mt-2" key={index}>
+            <div className="max-w-[380px] max-h-[250px] relative bg-cyan-400 group mt-2" key={index}>
               <div className="transition-translate duration-300 ease-in-out lg:group-hover:-translate-x-4 lg:group-hover:-translate-y-4">
                 <img src={data.img} alt="Image" />
               </div>

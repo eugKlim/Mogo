@@ -27,7 +27,7 @@ const Facts = () => {
     <section className="flex flex-wrap justify-center bg-cyan-400 text-white p-4">
       {factsData.map((data, index) => {
         return (
-          <div className="xl:w-1/5 sm:w-2/5 text-center font-MontserratBold border-2 border-cyan-200 py-10" key={index}>
+          <div className="sm:w-6/12 xl:w-1/5  text-center font-MontserratBold border-2 border-cyan-200 py-10" key={index}>
             <p className="font-MontserratRegular text-7xl">{data.number}</p>
             <p className="uppercase text-sm">{data.text}</p>
           </div>

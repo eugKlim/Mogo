@@ -56,7 +56,7 @@ const Info = () => {
   ];
 
   return (
-    <div className="container pt-16 pb-20 flex justify-center flex-wrap space-x-12 sm:flex-wrap-reverse">
+    <div className="container pt-16 pb-20 flex justify-center flex-wrap lg:space-x-12 sm:flex-wrap-reverse">
       {/* 1 */}
       <section className="xl:w-1/3 mb-10 md:max-w-2/4">
         <h2 className="font-MontserratBold text-4xl text-gray-500">MoGo</h2>
@@ -83,9 +83,9 @@ const Info = () => {
             </div>
           </div>
         </div>
-        <form className="mt-10 flex">
-          <input type="text" className="border p-2 rounded-l-xl" placeholder="Your Email..." />
-          <button className="uppercase font-MontserratBold px-4 bg-emerald-400 border border-emerald-400 py-2 -ml-1 text-white hover:bg-emerald-800">Subscribe</button>
+        <form className="mt-10 flex sm:flex-wrap md:flex-nowrap">
+          <input type="text" className="border p-2 md:rounded-l-xl sm:w-full md:w-1/2" placeholder="Your Email..." />
+          <button className="uppercase font-MontserratBold px-4 bg-emerald-400 border border-emerald-400 py-2 md:-ml-1 sm:mt-3 md:mt-0 text-white hover:bg-emerald-800 sm:w-full md:w-auto">Subscribe</button>
         </form>
       </section>
       {/* 2 */}

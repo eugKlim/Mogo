@@ -1,14 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Popup from '../components/popup/Popup';
 
 const Map = () => {
+  // popup ophitos
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closePopup = () => {
+    setIsOpen(false);
+  };
+  // popup ophitos /
   return (
-    <section className="bg-map-bg bg-cover xl:bg-options flex justify-center items-center flex-col py-[50px] cursor-pointer hover:opacity group" aria-label="Open map" title="Open map">
-      <div className="text-center flex justify-center items-center flex-col transition-scale duration-1000 ease-in-out lg:group-hover:scale-150">
-        <img src="/image/map/map-ico.svg" alt="map icon" />
-        <h2 className="uppercase text-red-500 my-2">Open map</h2>
-        <div className="w-[50px] h-1 bg-red-400"></div>
-      </div>
-    </section>
+    <>
+      <section onClick={togglePopup} className="bg-map-bg bg-cover xl:bg-options flex justify-center items-center flex-col py-[50px] cursor-pointer hover:opacity group" aria-label="Open map" title="Open map">
+        <div className="text-center flex justify-center items-center flex-col transition-scale duration-1000 ease-in-out lg:group-hover:scale-150">
+          <img src="/image/map/map-ico.svg" alt="map icon" />
+          <h2 className="uppercase text-red-500 my-2">Open map</h2>
+          <div className="w-[50px] h-1 bg-red-400"></div>
+        </div>
+        {/* popup */}
+        <Popup isOpen={isOpen} onClose={closePopup}>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d48792.48116306089!2d36.36776055672034!3d50.00500273315374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d50.02854836970335!2d36.37531377089909!5e0!3m2!1sru!2sua!4v1716640791801!5m2!1sru!2sua" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="border-0 h-full w-full"></iframe>
+        </Popup>
+        {/* / */}
+      </section>
+    </>
   );
 };
 

@@ -30,7 +30,7 @@ const Team = () => {
         {teamData.map((data, index) => {
           return (
             <div className="mb-10" key={index}>
-              <div className="relative group bg-cyan-400 w-[340px]">
+              <div className="relative group bg-cyan-400 max-w-[340px]">
                 <div className="transition-translate duration-300 ease-in-out lg:group-hover:-translate-x-4 lg:group-hover:-translate-y-4">
                   <img src={data.image} alt="Image" />
                 </div>
