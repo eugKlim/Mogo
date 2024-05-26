@@ -25,16 +25,18 @@ const What = () => {
   ];
 
   return (
-    <section className="pb-[70px] container">
-      <Title uptitle="Service" title="what we do" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
+    <section className="pb-[70px] dark:bg-slate-800 dark:text-white">
+      <div className="container">
+        <Title uptitle="Service" title="what we do" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
 
-      <div className="xl:flex xl:items-center xl:space-x-6">
-        <div className="xl:w-1/2 sm:flex sm:justify-center">
-          <img src="/image/what/image.jpg" alt="Image" />
-        </div>
+        <div className="xl:flex xl:items-center xl:space-x-6">
+          <div className="xl:w-1/2 sm:flex sm:justify-center">
+            <img src="/image/what/image.jpg" alt="Image" />
+          </div>
 
-        <div className="xl:w-1/2 sm:flex sm:justify-center">
-          <Accordion items={whatAccordion} />
+          <div className="xl:w-1/2 sm:flex sm:justify-center">
+            <Accordion items={whatAccordion} />
+          </div>
         </div>
       </div>
     </section>

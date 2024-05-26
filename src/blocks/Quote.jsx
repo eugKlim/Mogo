@@ -35,7 +35,7 @@ const Quote = () => {
   };
 
   return (
-    <section className="bg-gray-100 pt-8 pb-11 flex justify-center">
+    <section className="bg-gray-100 pt-8 pb-11 flex justify-center dark:bg-zinc-800 dark:text-white">
       <div className="sm:w-screen md:w-screen lg:container cursor-grab active:cursor-grabbing">
         <SplideSlider options={options} slides={quoteSlides} />
       </div>

@@ -38,7 +38,7 @@ const Popup = ({ isOpen, onClose, children }) => {
     <CSSTransition in={isOpen} timeout={300} classNames="popup-overlay" unmountOnExit nodeRef={popupOverlayRef}>
       <div className="popup-overlay" ref={popupOverlayRef} onClick={onClose} title="">
         <CSSTransition in={isOpen} timeout={300} classNames="popup-content" unmountOnExit nodeRef={popupContentRef}>
-          <div className="popup-content sm:w-11/12 xl:w-8/12" ref={popupContentRef} onClick={(e) => e.stopPropagation()}>
+          <div className="popup-content sm:w-11/12 xl:w-8/12 dark:bg-slate-800 text-black p-10 dark:text-white" ref={popupContentRef} onClick={(e) => e.stopPropagation()}>
             <button className="close-button" onClick={onClose}>
               ✕
             </button>

@@ -35,7 +35,9 @@ const Service = () => {
     },
   ];
   return (
-    <section className="pb-[40px] container">
+    <section className="pb-[40px] dark:bg-slate-800 dark:text-white">
+      <div className="container">
+
       <Title uptitle="We work with" title="Amazing Services" />
 
       <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 lg:space-x-5">
@@ -46,12 +48,13 @@ const Service = () => {
                 <img src={data.icon} alt="Image" />
               </div>
               <div className="text-base">
-                <h3 className="font-MontserratBold text-slate-900 mb-2 uppercase">{data.title}</h3>
-                <p className="text-slate-500">{data.text}</p>
+                <h3 className="font-MontserratBold text-slate-900 mb-2 uppercase dark:text-white">{data.title}</h3>
+                <p className="text-slate-500 dark:text-slate-400">{data.text}</p>
               </div>
             </div>
           );
         })}
+        </div>
       </div>
     </section>
   );

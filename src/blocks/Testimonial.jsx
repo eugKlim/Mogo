@@ -38,8 +38,8 @@ const Testimonial = () => {
   };
   return (
     <section>
-      <div className="py-5 flex justify-center">
-        <div className="sm:w-screen md:w-screen lg:container cursor-grab active:cursor-grabbing">
+      <div className="py-5 flex justify-center dark:bg-zinc-800 dark:text-white">
+        <div className="sm:w-screen md:w-screen lg:container cursor-grab active:cursor-grabbing ">
           <SplideSlider options={options} slides={testimonialSlides} />
         </div>
       </div>

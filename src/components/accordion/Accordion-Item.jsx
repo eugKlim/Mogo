@@ -11,7 +11,7 @@ const AccordionItem = ({ title, content, image, isActive, onClick }) => (
         <img src="/image/global/arrow-down.png" alt="icon arrow" />
       </span>
     </div>
-    {isActive && <div className="p-5 text-gray-500 font-RobotoLightItalic overflow-y-auto h-[146px]">{content}</div>}
+    {isActive && <div className="p-5 text-gray-500 font-RobotoLightItalic overflow-y-auto h-[146px] dark:text-white">{content}</div>}
   </div>
 );
 

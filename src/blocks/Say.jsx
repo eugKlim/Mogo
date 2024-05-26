@@ -29,8 +29,10 @@ const Say = () => {
     },
   ];
   return (
-    <section className="bg-feature-bg bg-cover xl:bg-options pb-8">
+    <section className="bg-feature-bg bg-cover xl:bg-options ">
+      <div className="dark:bg-dark pb-8">      
       <div className="container">
+
         <Title uptitle="Happy Clients" title="What people say" />
 
         <div className="grid sm:grid-cols-1 xl:grid-cols-2 xl:space-x-8 pt-5">
@@ -41,15 +43,15 @@ const Say = () => {
                   <img src={data.image} alt="image" className="min-w-[110px] h-[110px] " />
                 </div>
                 <div>
-                  <p className="font-MontserratBold text-lg">{data.name}</p>
-                  <p className="font-RobotoLightItalic pt-1">{data.work}</p>
+                  <p className="font-MontserratBold text-lg dark:text-white">{data.name}</p>
+                  <p className="font-RobotoLightItalic pt-1 dark:text-green-400">{data.work}</p>
                   <div className="w-20 h-1 bg-red-400 my-5 sm:mx-auto md:mx-0" />
-                  <p className="font-RobotoRegular text-gray-500">{data.text}</p>
+                  <p className="font-RobotoRegular text-gray-500 dark:text-white">{data.text}</p>
                 </div>
               </div>
             );
           })}
-        </div>
+        </div>        </div>
       </div>
     </section>
   );

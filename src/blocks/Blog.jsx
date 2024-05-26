@@ -33,7 +33,8 @@ const Blog = () => {
   ];
 
   return (
-    <section className="pb-20 container">
+    <section className="pb-20 dark:bg-slate-800 dark:text-white">
+      <div className="container">
       <Title uptitle="Follow Us" title="Latest Blog" />
 
       <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-7 auto-cols-auto">
@@ -50,8 +51,8 @@ const Blog = () => {
               </div>
 
               <div>
-                <h4 className="font-MontserratBold text-slate-800 uppercase pt-4 pb-3">{data.title}</h4>
-                <p className="text-gray-500">{data.text}</p>
+                <h4 className="font-MontserratBold text-slate-800 uppercase pt-4 pb-3 dark:text-white">{data.title}</h4>
+                <p className="text-gray-500 dark:text-gray-400">{data.text}</p>
                 <div className="w-full h-[1px] bg-gray-400 my-3"></div>
                 <div className="flex space-x-4">
                   <div className="flex space-x-2 items-center">
@@ -67,6 +68,7 @@ const Blog = () => {
             </div>
           );
         })}
+      </div>
       </div>
     </section>
   );

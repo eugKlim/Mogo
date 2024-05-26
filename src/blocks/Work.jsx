@@ -55,7 +55,7 @@ const Work = () => {
   ];
 
   return (
-    <section className="pb-24 sm:bg-gray-100 md:bg-white">
+    <section className="sm:bg-gray-100 md:bg-white dark:bg-gray-700 dark:text-white">
       <div className="container">
         <Title uptitle="What we do" title="Story about us" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
       </div>
