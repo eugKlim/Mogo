@@ -5,6 +5,9 @@
 body.noScroll {
   overflow: hidden;
 }
+html.dark {
+  background: #0f172a;
+}
 
 /* scroll custom */
 ::-webkit-scrollbar {
@@ -33,7 +36,7 @@ body.noScroll {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 1000;
+  z-index: 1000 !important;
   cursor: default;
 }
 .popup-overlay-enter {
@@ -66,8 +69,10 @@ body.noScroll {
 }
 .popup-content {
   min-height: 500px;
+  max-height: 80%;
   background-color: #ffffff;
   position: relative;
+  overflow-y: auto;
 }
 /* / popup */
 
@@ -164,6 +169,7 @@ html.dark .toggle-switch-img {
     position: relative;
     padding: 10px 20px;
     background: transparent;
+    z-index: 700 !important;
   }
   .burger span {
     width: 100%;
@@ -171,7 +177,7 @@ html.dark .toggle-switch-img {
     background-color: #fff;
     position: absolute;
     left: 0;
-    transition: 0.4s linear;
+    transition: 0.2s linear;
   }
   .burger span:first-child {
     top: 0;
@@ -182,7 +188,11 @@ html.dark .toggle-switch-img {
   .burger span:last-child {
     top: 18px;
   }
-
+  .burger.active {
+    position: fixed;
+    right: 20px;
+    top: 35px;
+  }
   .burger.active span:first-child {
     top: 0;
     transform: rotate(-45deg);
@@ -198,6 +208,35 @@ html.dark .toggle-switch-img {
     transform: rotate(35deg);
     opacity: 0;
   }
+  .burger-overlay {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s linear;
+  }
+  .burger-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-block {
+    transform: translateX(-100%);
+    transition: 0.2s linear;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+  }
+  .nav-hidden {
+    transform: translateX(0);
+    position: static;
+    top: 0;
+    left: 0;
+    height: auto;
+    background-color: transparent !important;
+  }
+  .nav-block.active{
+    transform: translateX(0);
+  }
+
   /* burger / */
 
   /* title */

@@ -28,7 +28,7 @@ const Intro = () => {
           Welcome <span className="block">to MoGo</span>
         </h3>
 
-        <button className="block mx-auto bg-transparent border-white border-2 uppercase py-2 px-6 mt-[100px] hover:bg-white hover:text-stone-900 font-MontserratBold" title="Learn more" aria-label="Learn more">
+        <button className="block mx-auto bg-transparent border-white border-2 uppercase py-2 px-6 mt-[100px] lg:hover:bg-white lg:hover:text-stone-900 font-MontserratBold" title="Learn more" aria-label="Learn more">
           Learn more
         </button>
       </div>

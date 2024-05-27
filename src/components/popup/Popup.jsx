@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 const Popup = ({ isOpen, onClose, children }) => {
-  const [isBodyScrollLocked, setIsBodyScrollLocked] = useState(false);
   const popupOverlayRef = useRef(null);
   const popupContentRef = useRef(null);
 
@@ -23,14 +22,12 @@ const Popup = ({ isOpen, onClose, children }) => {
       document.addEventListener('mousedown', handleOutsideClick);
       document.addEventListener('keydown', handleEscapeKey);
       document.body.classList.add('noScroll');
-      setIsBodyScrollLocked(true);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
       document.removeEventListener('keydown', handleEscapeKey);
       document.body.classList.remove('noScroll');
-      setIsBodyScrollLocked(false);
     };
   }, [isOpen, onClose]);
 
@@ -38,7 +35,7 @@ const Popup = ({ isOpen, onClose, children }) => {
     <CSSTransition in={isOpen} timeout={300} classNames="popup-overlay" unmountOnExit nodeRef={popupOverlayRef}>
       <div className="popup-overlay" ref={popupOverlayRef} onClick={onClose} title="">
         <CSSTransition in={isOpen} timeout={300} classNames="popup-content" unmountOnExit nodeRef={popupContentRef}>
-          <div className="popup-content sm:w-11/12 xl:w-8/12 dark:bg-slate-800 text-black p-10 dark:text-white" ref={popupContentRef} onClick={(e) => e.stopPropagation()}>
+          <div className="popup-content sm:w-11/12 xl:w-8/12 dark:bg-slate-700 text-black p-10 dark:text-white overflow-y-auto" ref={popupContentRef} onClick={(e) => e.stopPropagation()}>
             <button className="close-button" onClick={onClose}>
               ✕
             </button>
