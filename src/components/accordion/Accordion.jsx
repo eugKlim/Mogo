@@ -11,7 +11,14 @@ const Accordion = ({ items }) => {
   return (
     <div>
       {items.map((item, index) => (
-        <AccordionItem key={index} title={item.title} content={item.content} image={item.image} isActive={activeIndex === index} onClick={() => handleClick(index)} />
+        <AccordionItem
+          key={index}
+          title={item.title}
+          content={item.content}
+          image={item.image}
+          isActive={activeIndex === index}
+          onClick={() => handleClick(index)}
+        />
       ))}
     </div>
   );

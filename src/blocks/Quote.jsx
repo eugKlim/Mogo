@@ -18,9 +18,16 @@ const Quote = () => {
   ];
 
   const quoteSlides = quoteData.map((data, index) => (
-    <div className="pt-10 mx-auto lg:flex lg:items-center md:w-10/12" key={index}>
+    <div
+      className="pt-10 mx-auto lg:flex lg:items-center md:w-10/12"
+      key={index}
+    >
       <div className="lg:w-[150px] sm:w-full sm:flex sm:justify-center sm:mb-7">
-        <img src="/image/quote/quote-image.png" alt="Image" className="min-w-[150px] h-[150px]" />
+        <img
+          src="/image/quote/quote-image.png"
+          alt="Image"
+          className="min-w-[150px] h-[150px]"
+        />
       </div>
       <div className="px-16 text-xl max-w-[840px]">
         <p className="text-gray-500 font-RobotoLightItalic mb-5">{data.text}</p>

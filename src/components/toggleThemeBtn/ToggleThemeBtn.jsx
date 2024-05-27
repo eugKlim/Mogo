@@ -23,9 +23,18 @@ const ToggleBtn = ({ lightIco, darkIco }) => {
   };
 
   return (
-    <div className={`toggle-switch ${isToggled ? 'toggle-switch-on' : 'toggle-switch-off'}`} onClick={handleToggle}>
+    <div
+      className={`toggle-switch ${
+        isToggled ? 'toggle-switch-on' : 'toggle-switch-off'
+      }`}
+      onClick={handleToggle}
+    >
       <div className="toggle-switch-img">
-        <img className="" src={isToggled ? lightIco : darkIco} alt="Icon mode" />
+        <img
+          className=""
+          src={isToggled ? lightIco : darkIco}
+          alt="Icon mode"
+        />
       </div>
     </div>
   );

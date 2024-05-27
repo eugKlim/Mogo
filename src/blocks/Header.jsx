@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Popup from '../components/popup/Popup';
-import ToggleBtn from '../components/toggleBtn/ToggleBtn';
+import ToggleBtn from '../components/toggleThemeBtn/ToggleThemeBtn';
 import LightIcon from '/image/global/light-icon.svg';
 import DarkIcon from '/image/global/dark-icon.svg';
 

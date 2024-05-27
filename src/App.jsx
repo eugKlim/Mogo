@@ -1,5 +1,5 @@
 import './fonts.css';
-import './style.css';
+import './style.scss';
 
 // block:
 import Header from './blocks/Header';

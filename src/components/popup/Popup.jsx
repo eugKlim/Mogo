@@ -7,7 +7,10 @@ const Popup = ({ isOpen, onClose, children }) => {
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (popupOverlayRef.current && !popupOverlayRef.current.contains(event.target)) {
+      if (
+        popupOverlayRef.current &&
+        !popupOverlayRef.current.contains(event.target)
+      ) {
         onClose();
       }
     };
@@ -32,11 +35,32 @@ const Popup = ({ isOpen, onClose, children }) => {
   }, [isOpen, onClose]);
 
   return (
-    <CSSTransition in={isOpen} timeout={300} classNames="popup-overlay" unmountOnExit nodeRef={popupOverlayRef}>
-      <div className="popup-overlay" ref={popupOverlayRef} onClick={onClose} title="">
-        <CSSTransition in={isOpen} timeout={300} classNames="popup-content" unmountOnExit nodeRef={popupContentRef}>
-          <div className="popup-content sm:w-11/12 xl:w-8/12 dark:bg-slate-700 text-black p-10 dark:text-white overflow-y-auto" ref={popupContentRef} onClick={(e) => e.stopPropagation()}>
-            <button className="close-button" onClick={onClose}>
+    <CSSTransition
+      in={isOpen}
+      timeout={300}
+      classNames="popup-overlay"
+      unmountOnExit
+      nodeRef={popupOverlayRef}
+    >
+      <div
+        className="popup-overlay"
+        ref={popupOverlayRef}
+        onClick={onClose}
+        title=""
+      >
+        <CSSTransition
+          in={isOpen}
+          timeout={300}
+          classNames="popup-content"
+          unmountOnExit
+          nodeRef={popupContentRef}
+        >
+          <div
+            className="popup-content sm:w-11/12 xl:w-8/12 dark:bg-slate-700 text-black p-10 dark:text-white overflow-y-auto"
+            ref={popupContentRef}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="popup-close-button" onClick={onClose}>
               ✕
             </button>
             {children}

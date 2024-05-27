@@ -21,7 +21,10 @@ const Testimonial = () => {
   ];
 
   const testimonialSlides = testimonialData.map((data, index) => (
-    <div className="py-10 mx-auto lg:flex lg:items-center md:w-10/12" key={index}>
+    <div
+      className="py-10 mx-auto lg:flex lg:items-center md:w-10/12"
+      key={index}
+    >
       <div className="lg:w-[190px] sm:w-full sm:flex sm:justify-center sm:mb-7">
         <img src={data.image} alt="Image" className="min-w-[190px] h-[200px]" />
       </div>
