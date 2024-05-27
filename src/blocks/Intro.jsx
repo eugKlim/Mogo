@@ -21,7 +21,8 @@ const Intro = () => {
   ];
 
   return (
-    <section className="bg-intro-bg bg-options max-w-[2560px] mt-[-100px] container pb-9 text-white pt-[190px] sm:bg-cover">
+    <section className="bg-intro-bg bg-options min-w-full mt-[-100px] container pb-9 text-white pt-[300px] sm:bg-cover">
+    {/* <section className="bg-intro-bg bg-options bg-cover max-w-[2560px] mt-[-100px] container pb-9 text-white pt-[300px] sm:bg-cover"> */}
       <div>
         <h2 className="upTitle text-white mb-8 md:text-6xl sm:text-4xl">
           Creative Template

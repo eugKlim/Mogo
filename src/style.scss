@@ -25,6 +25,33 @@ body.noScroll {
   }
 }
 
+// fixed header on scroll
+.header {
+  color: white;
+  min-width: 100%;
+  position: absolute;
+}
+html.dark .header.fixed {
+  background-color: rgb(7, 143, 143,.8);
+}
+.header.fixed {
+  background-color: rgba(11, 93, 216, 0.8);
+  top: 0;
+  padding: 12px 20px;
+  min-width: 100%;
+  animation: fromTop 0.2s linear;
+  position: fixed;
+  z-index: 1000;
+}
+@keyframes fromTop {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 @layer components {
   button {
     transition: 0.3s linear;

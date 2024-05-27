@@ -3,7 +3,7 @@ import Title from '../components/title/Title';
 
 const Feature = () => {
   return (
-    <section className="bg-feature-bg bg-options max-w-[1280px] darkBgOverlay mx-auto">
+    <section className="bg-feature-bg bg-options bg-cover min-w-full darkBgOverlay mx-auto">
       <div className="dark:bg-dark">
         <div className="container">
           <Title uptitle="For all devices" title="Unique design" />

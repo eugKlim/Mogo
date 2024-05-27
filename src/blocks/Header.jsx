@@ -47,9 +47,6 @@ const Header = () => {
 
   // burger
   const [isActiveBurger, setActiveBurger] = useState();
-
-  // burger /
-
   const clickBurger = () => {
     setActiveBurger((prevState) => !prevState);
   };
@@ -61,16 +58,51 @@ const Header = () => {
       document.body.classList.remove('noScroll');
     };
   }, [isActiveBurger]);
+  // burger /
+
+  // fixed header
+  const [isFixed, setIsFixed] = useState(false);
+  const handleScroll = () => {
+    setIsFixed(window.scrollY >= 800);
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  // fixed header /
+
   return (
     <>
-      <div className={`burger-overlay ${isActiveBurger ? 'active' : ''} bg-dark sm:fixed lg:hidden w-full h-screen min-w-screen z-[700]`} onClick={clickBurger} />
-      <header className="container flex justify-between items-center py-5 text-white">
+      <div
+        className={`burger-overlay ${
+          isActiveBurger ? 'active' : ''
+        } bg-dark sm:fixed lg:hidden w-full h-screen min-w-screen z-[700]`}
+        onClick={clickBurger}
+      />
+      <header
+        className={`header ${
+          isFixed ? 'fixed' : ''
+        } container flex justify-between items-center py-5 text-white max-w-[2500px]`}
+      >
         <h1 className="title text-white sm:text-lg md:text-3xl z-20">MoGo</h1>
         <nav className="flex items-center space-x-6 relative">
-          <ul className={`sm:nav-block ${isActiveBurger ? 'active' : ''}  uppercase text-sm flex items-center sm:flex-col sm:w-full sm:h-screen sm:bg-teal-500 sm:dark:bg-teal-700 sm:fixed sm:top-0 sm:left-0 sm:max-w-60 sm:overflow-y-auto sm:z-[702] sm:pt-12 sm:space-y-10 lg:bg-transparent lg:block lg:static lg:h-auto lg:space-x-6 lg:space-y-0 lg:max-w-full lg:overflow-y-visible lg:pt-1 lg:nav-hidden`}>
+          <ul
+            className={`sm:nav-block ${
+              isActiveBurger ? 'active' : ''
+            }  uppercase text-sm flex items-center sm:flex-col sm:w-full sm:h-screen sm:bg-teal-500 sm:dark:bg-teal-700 sm:fixed sm:top-0 sm:left-0 sm:max-w-60 sm:overflow-y-auto sm:z-[702] sm:pt-12 sm:space-y-10 lg:bg-transparent lg:block lg:static lg:h-auto lg:space-x-6 lg:space-y-0 lg:max-w-full lg:overflow-y-visible lg:pt-1 lg:nav-hidden`}
+          >
             {headerDataLinks.map((data, index) => {
               return (
-                <a href={data.href} title={data.nameLink} className={data.class} aria-label={data.nameLink} key={index} onClick={clickBurger}>
+                <a
+                  href={data.href}
+                  title={data.nameLink}
+                  className={data.class}
+                  aria-label={data.nameLink}
+                  key={index}
+                  onClick={clickBurger}
+                >
                   {data.nameLink}
                 </a>
               );
@@ -78,22 +110,60 @@ const Header = () => {
           </ul>
           <div className="sm:space-x-4 lg:space-x-6 flex items-center sm:pr-16 lg:pr-0">
             <ToggleBtn lightIco={LightIcon} darkIco={DarkIcon} />
-            <div onClick={togglePopup} className="inline-block lg:hover:text-yellow-500 cursor-pointer" title="basket button" aria-label="basket button">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            <div
+              onClick={togglePopup}
+              className="inline-block lg:hover:text-yellow-500 cursor-pointer"
+              title="basket button"
+              aria-label="basket button"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                />
               </svg>
               <Popup isOpen={isOpen} onClose={closePopup}>
                 <p>Basket</p>
               </Popup>
             </div>
-            <a href="#" className="inline-block lg:hover:text-yellow-500" title="search" aria-label="search">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            <a
+              href="#"
+              className="inline-block lg:hover:text-yellow-500"
+              title="search"
+              aria-label="search"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
               </svg>
             </a>
           </div>
 
-          <button aria-label="menu" className={`burger ${isActiveBurger ? 'active' : ''} absolute right-0 z-[701] sm:block lg:hidden`} onClick={clickBurger}>
+          <button
+            aria-label="menu"
+            className={`burger ${
+              isActiveBurger ? 'active' : ''
+            } absolute right-0 z-[701] sm:block lg:hidden`}
+            onClick={clickBurger}
+          >
             <span></span>
             <span></span>
             <span></span>
