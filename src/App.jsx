@@ -1,46 +1,36 @@
 import './fonts.css';
 import './style.scss';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/router/ScrollToTop';
 
-// block:
 import Header from './blocks/Header';
 import Footer from './blocks/Footer';
-import Intro from './blocks/Intro';
-import About from './blocks/About';
-import Facts from './blocks/Facts';
-import Service from './blocks/Service';
-import Feature from './blocks/Feature';
-import What from './blocks/What';
-import Quote from './blocks/Quote';
-import Team from './blocks/Team';
-import Logos from './blocks/Logos';
-import Testimonial from './blocks/Testimonial';
-import Work from './blocks/Work';
-import Say from './blocks/Say';
-import Blog from './blocks/Blog';
-import Map from './blocks/Map';
-import Info from './blocks/Info';
+
+// pages
+import AboutPage from './pages/About-Page';
+import HomePage from './pages/Home-Page';
+import ServicePage from './pages/Service-Page';
+import WorkPage from './pages/Work-Page';
+import BlogPage from './pages/Blog-Page';
+import ContactPage from './pages/Contact-Page';
 
 function App() {
   return (
     <div className="h-screen grid grid-rows-[auto_1fr_auto] font-RobotoRegular">
-      <Header />
-      <div>
-        <Intro />
-        <About />
-        <Facts />
-        <Service />
-        <Feature />
-        <What />
-        <Quote />
-        <Team />
-        <Logos />
-        <Work />
-        <Testimonial />
-        <Say />
-        <Blog />
-        <Map />
-        <Info />
-      </div>
+      <div className='pt-14'/>
+
+      <Router>
+        <Header />
+        <ScrollToTop/>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/service" element={<ServicePage />} />
+          <Route path="/work" element={<WorkPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </Router>
       <Footer />
     </div>
   );

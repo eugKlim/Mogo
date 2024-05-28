@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Popup from '../components/popup/Popup';
 import ToggleBtn from '../components/toggleThemeBtn/ToggleThemeBtn';
+import { NavLink } from 'react-router-dom';
+
 import LightIcon from '/image/global/light-icon.svg';
 import DarkIcon from '/image/global/dark-icon.svg';
 
 const Header = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+  const updateIsMobile = () => {
+    setIsMobile(window.innerWidth <= 800);
+  };
+
   // popup ophitos
   const [isOpen, setIsOpen] = useState(false);
 
@@ -19,29 +26,34 @@ const Header = () => {
 
   const headerDataLinks = [
     {
-      href: '#',
-      nameLink: 'About',
-      class: 'navigation active',
+      nameLink: 'Home',
+      link: '',
+      class: '',
     },
     {
-      href: '#',
+      nameLink: 'about',
+      link: 'about',
+      class: '',
+    },
+    {
       nameLink: 'service',
-      class: 'navigation',
+      link: 'service',
+      class: '',
     },
     {
-      href: '#',
       nameLink: 'work',
-      class: 'navigation',
+      link: 'work',
+      class: '',
     },
     {
-      href: '#',
       nameLink: 'blog',
-      class: 'navigation',
+      link: 'blog',
+      class: '',
     },
     {
-      href: '#',
       nameLink: 'contact',
-      class: 'navigation',
+      link: 'contact',
+      class: '',
     },
   ];
 
@@ -67,8 +79,10 @@ const Header = () => {
   };
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', updateIsMobile);
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', updateIsMobile);
     };
   }, []);
   // fixed header /
@@ -84,27 +98,28 @@ const Header = () => {
       <header
         className={`header ${
           isFixed ? 'fixed' : ''
-        } container flex justify-between items-center py-5 text-white max-w-[2500px]`}
+        } container flex justify-between items-center py-2 text-white max-w-[2500px] bg-orange-900 bg-opacity-80`}
       >
         <h1 className="title text-white sm:text-lg md:text-3xl z-20">MoGo</h1>
         <nav className="flex items-center space-x-6 relative">
           <ul
             className={`sm:nav-block ${
               isActiveBurger ? 'active' : ''
-            }  uppercase text-sm flex items-center sm:flex-col sm:w-full sm:h-screen sm:bg-teal-500 sm:dark:bg-teal-700 sm:fixed sm:top-0 sm:left-0 sm:max-w-60 sm:overflow-y-auto sm:z-[702] sm:pt-12 sm:space-y-10 lg:bg-transparent lg:block lg:static lg:h-auto lg:space-x-6 lg:space-y-0 lg:max-w-full lg:overflow-y-visible lg:pt-1 lg:nav-hidden`}
+            }  uppercase text-sm flex items-center sm:flex-col sm:w-full sm:h-screen sm:bg-teal-500 sm:dark:bg-teal-700 sm:fixed sm:top-0 sm:left-0 sm:max-w-60 sm:overflow-y-auto sm:z-[702] sm:pt-12 sm:space-y-10 lg:bg-transparent  lg:static lg:h-auto lg:space-x-6 lg:space-y-0 lg:max-w-full lg:overflow-y-visible lg:pt-1 lg:nav-hidden lg:flex-row`}
           >
             {headerDataLinks.map((data, index) => {
               return (
-                <a
-                  href={data.href}
+                <li
                   title={data.nameLink}
-                  className={data.class}
+                  className={`${data.class} navigation`}
                   aria-label={data.nameLink}
                   key={index}
-                  onClick={clickBurger}
+                  onClick={isMobile ? clickBurger : null}
                 >
-                  {data.nameLink}
-                </a>
+                  <NavLink to={`/${data.link}`} activeclassname="activeNav">
+                    {data.nameLink}
+                  </NavLink>
+                </li>
               );
             })}
           </ul>
@@ -160,7 +175,7 @@ const Header = () => {
           <button
             aria-label="menu"
             className={`burger ${
-              isActiveBurger ? 'active' : ''
+              isActiveBurger ? 'active-burger' : ''
             } absolute right-0 z-[701] sm:block lg:hidden`}
             onClick={clickBurger}
           >
