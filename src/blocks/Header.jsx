@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Popup from '../components/popup/Popup';
+import PopupOptions from '../components/popup/Popup-Options';
 import ToggleBtn from '../components/toggleThemeBtn/ToggleThemeBtn';
 import { NavLink } from 'react-router-dom';
 
@@ -7,22 +8,11 @@ import LightIcon from '/image/global/light-icon.svg';
 import DarkIcon from '/image/global/dark-icon.svg';
 
 const Header = () => {
+  const { isOpen, togglePopup, closePopup } = PopupOptions();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
   const updateIsMobile = () => {
     setIsMobile(window.innerWidth <= 800);
   };
-
-  // popup ophitos
-  const [isOpen, setIsOpen] = useState(false);
-
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closePopup = () => {
-    setIsOpen(false);
-  };
-  // popup ophitos /
 
   const headerDataLinks = [
     {
@@ -64,10 +54,10 @@ const Header = () => {
   };
   useEffect(() => {
     if (isActiveBurger) {
-      document.body.classList.add('noScroll');
+      document.documentElement.style.overflow = 'hidden';
     }
     return () => {
-      document.body.classList.remove('noScroll');
+      document.documentElement.style.overflow = '';
     };
   }, [isActiveBurger]);
   // burger /
@@ -89,23 +79,24 @@ const Header = () => {
 
   return (
     <>
-      <div
-        className={`burger-overlay ${
-          isActiveBurger ? 'active' : ''
-        } bg-dark sm:fixed lg:hidden w-full h-screen min-w-screen z-[700]`}
-        onClick={clickBurger}
-      />
       <header
         className={`header ${
-          isFixed ? 'fixed' : ''
+          isFixed ? 'fixed-header' : ''
         } container flex justify-between items-center py-2 text-white max-w-[2500px] bg-orange-900 bg-opacity-80`}
       >
+        <div
+          className={`burger-overlay ${
+            isActiveBurger ? 'active' : ''
+          } bg-dark sm:fixed lg:hidden w-full min-h-screen min-w-screen z-[901]`}
+          onClick={clickBurger}
+        />
+
         <h1 className="title text-white sm:text-lg md:text-3xl z-20">MoGo</h1>
         <nav className="flex items-center space-x-6 relative">
           <ul
             className={`sm:nav-block ${
               isActiveBurger ? 'active' : ''
-            }  uppercase text-sm flex items-center sm:flex-col sm:w-full sm:h-screen sm:bg-teal-500 sm:dark:bg-teal-700 sm:fixed sm:top-0 sm:left-0 sm:max-w-60 sm:overflow-y-auto sm:z-[702] sm:pt-12 sm:space-y-10 lg:bg-transparent  lg:static lg:h-auto lg:space-x-6 lg:space-y-0 lg:max-w-full lg:overflow-y-visible lg:pt-1 lg:nav-hidden lg:flex-row`}
+            }  uppercase text-sm flex items-center sm:flex-col sm:w-full sm:h-screen sm:bg-teal-500 sm:dark:bg-teal-700 sm:fixed sm:top-0 sm:left-0 sm:max-w-60 sm:overflow-y-auto sm:z-[996] sm:pt-12 sm:space-y-10 lg:bg-transparent  lg:static lg:h-auto lg:space-x-6 lg:space-y-0 lg:max-w-full lg:overflow-y-visible lg:pt-1 lg:nav-hidden lg:flex-row`}
           >
             {headerDataLinks.map((data, index) => {
               return (

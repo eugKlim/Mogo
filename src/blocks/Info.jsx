@@ -1,10 +1,10 @@
 import React from 'react';
-import FacebookIco from '../../public/image/global/facebook-ico';
-import TwitterIco from '../../public/image/global/twitter-ico';
-import PinterestIco from '../../public/image/global/pinterest-ico';
-import InstagramIco from '../../public/image/global/instagram-ico';
-import YoutubeIco from '../../public/image/global/youtube-ico';
-import DribbleIco from '../../public/image/global/dribble-ico';
+import FacebookIco from '/public/image/global/facebook-ico';
+import TwitterIco from '/public/image/global/twitter-ico';
+import PinterestIco from '/public/image/global/pinterest-ico';
+import InstagramIco from '/public/image/global/instagram-ico';
+import YoutubeIco from '/public/image/global/youtube-ico';
+import DribbleIco from '/public/image/global/dribble-ico';
 
 const Info = () => {
   const infoBlogsData = [

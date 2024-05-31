@@ -17,11 +17,11 @@ import ContactPage from './pages/Contact-Page';
 function App() {
   return (
     <div className="h-screen grid grid-rows-[auto_1fr_auto] font-RobotoRegular">
-      <div className='pt-14'/>
+      <div className="pt-14" />
 
       <Router>
+        <ScrollToTop />
         <Header />
-        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />

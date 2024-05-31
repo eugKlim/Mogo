@@ -9,9 +9,6 @@
 html {
   overflow-y: scroll;
 }
-body.noScroll {
-  overflow: hidden;
-}
 
 /* scroll custom */
 ::-webkit-scrollbar {
@@ -33,18 +30,19 @@ body.noScroll {
   color: white;
   min-width: 100%;
   position: absolute;
+
 }
-html.dark .header.fixed {
+html.dark .header.fixed-header {
   background-color: rgb(7, 143, 143, 0.9);
 }
-.header.fixed {
+.header.fixed-header {
   background-color: rgba(11, 93, 216, 0.9);
   top: 0;
   padding: 12px 20px;
   min-width: 100%;
   animation: fromTop 0.2s linear;
   position: fixed;
-  z-index: 1000;
+  z-index: 900 !important;
 }
 @keyframes fromTop {
   from {
@@ -54,7 +52,6 @@ html.dark .header.fixed {
     transform: translateY(0);
   }
 }
-
 @layer components {
   button {
     transition: 0.3s linear;
@@ -83,10 +80,9 @@ html.dark .header.fixed {
 
   /* burger */
   .burger {
-    position: relative;
     padding: 10px 20px;
     background: transparent;
-    z-index: 700 !important;
+    z-index: 999 !important;
     & span {
       width: 100%;
       height: 4px;
@@ -131,6 +127,7 @@ html.dark .header.fixed {
       visibility: hidden;
       transition: opacity 0.2s linear;
       &.active {
+        height: 200vh;
         opacity: 1;
         visibility: visible;
       }
@@ -178,6 +175,7 @@ html.dark .header.fixed {
   /* nav */
   .navigation {
     position: relative;
+    color: #fff;
     &:hover {
       color: #fce38a;
     }
