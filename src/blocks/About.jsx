@@ -1,4 +1,7 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import Title from '../components/title/Title';
 
 const About = () => {
@@ -34,7 +37,11 @@ const About = () => {
                 key={index}
               >
                 <div className="transition-translate duration-300 ease-in-out lg:group-hover:-translate-x-4 lg:group-hover:-translate-y-4">
-                  <img src={data.img} alt="Image" />
+                  <LazyLoadImage
+                    alt="Image"
+                    src={data.img}
+                    effect="blur"
+                  />
                 </div>
 
                 <div className="absolute top-0 w-full h-full flex items-center flex-col justify-center text-center opacity-0 invisible hover-gradient transition-translate duration-300 ease-in-out lg:group-hover:visible lg:group-hover:opacity-90 lg:group-hover:-translate-x-4 lg:group-hover:-translate-y-4">

@@ -1,23 +1,17 @@
 import React, { useState } from 'react';
 import Popup from '../components/popup/Popup';
+import LazyBg from '../components/lazyBg/LazyBg';
+import mapBg from '/image/map/map-bg.jpg';
+import PopupOptions from '../components/popup/Popup-Options';
 
 const Map = () => {
-  // popup ophitos
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, togglePopup, closePopup } = PopupOptions();
 
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closePopup = () => {
-    setIsOpen(false);
-  };
-  // popup ophitos /
   return (
-    <>
+    <LazyBg src={mapBg}>
       <section
         onClick={togglePopup}
-        className="bg-map-bg bg-cover xl:bg-options flex justify-center items-center flex-col cursor-pointer"
+        className="bg-cover xl:bg-options flex justify-center items-center flex-col cursor-pointer"
         aria-label="Open map"
         title="Open map"
       >
@@ -40,7 +34,7 @@ const Map = () => {
           {/* / */}
         </div>
       </section>
-    </>
+    </LazyBg>
   );
 };
 

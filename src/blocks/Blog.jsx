@@ -1,4 +1,6 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import Title from '../components/title/Title';
 
 const Blog = () => {
@@ -42,10 +44,14 @@ const Blog = () => {
             return (
               <div className="max-w-[340px] mx-auto" key={index}>
                 <div className="relative">
-                  <img src={data.image} alt="image" />
+                  <LazyLoadImage
+                    alt="Image"
+                    src={data.image}
+                    effect="blur"
+                  />
                   <div className="absolute bottom-4 -left-2 inline-block text-center bg-cyan-400 text-white py-1 px-2">
                     <div className="uppercase font-MontserratBold text-2xl">
-                      {data.dateNum}{' '}
+                      {data.dateNum}
                       <span className="block font-RobotoLightItalic text-base">
                         {data.dateMonth}
                       </span>

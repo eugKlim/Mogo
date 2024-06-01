@@ -1,12 +1,20 @@
 import React from 'react';
-import Title from '../components/title/Title';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Service from '../blocks/Service';
 
 const ServicePage = () => {
   return (
-    <div className="dark:text-white text-slate-500">
-      <Service />
-    </div>
+    <HelmetProvider>
+      <Helmet>
+        <title>MoGo - Service</title>
+        <meta name="description" content="Mogo lorem description" />
+        <meta name="keywords" content="Mogo, page, react, Service" />
+        <meta name="author" content="MoGo" />
+      </Helmet>
+      <section className="dark:text-white text-slate-500">
+        <Service />
+      </section>
+    </HelmetProvider>
   );
 };
 

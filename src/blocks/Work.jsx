@@ -1,4 +1,6 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import Title from '../components/title/Title';
 
 const Work = () => {
@@ -68,7 +70,12 @@ const Work = () => {
         {workData.map((data, index) => {
           return (
             <div className={data.class} key={index}>
-              <img src={data.image} alt="image" />
+              <LazyLoadImage
+                alt="image"
+                src={data.image}
+                effect="blur"
+                className="inline-block"
+              />
 
               <div className="absolute transition-opacity duration-500 ease-in-out top-0 left-0 w-full h-full opacity-0  hover-gradient flex justify-center align-center flex-col text-center xl:group-hover:opacity-90">
                 <div>

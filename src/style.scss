@@ -9,6 +9,12 @@
 html {
   overflow-y: scroll;
 }
+.loading-gif {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin: 100px auto 0;
+}
 
 /* scroll custom */
 ::-webkit-scrollbar {
@@ -30,7 +36,6 @@ html {
   color: white;
   min-width: 100%;
   position: absolute;
-
 }
 html.dark .header.fixed-header {
   background-color: rgb(7, 143, 143, 0.9);

@@ -1,4 +1,6 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import Accordion from '../components/accordion/Accordion';
 import Title from '../components/title/Title';
 
@@ -35,7 +37,11 @@ const What = () => {
 
         <div className="xl:flex xl:items-center xl:space-x-6">
           <div className="xl:w-1/2 sm:flex sm:justify-center">
-            <img src="/image/what/image.jpg" alt="Image" />
+            <LazyLoadImage
+              alt="image"
+              src="/image/what/image.jpg"
+              effect="blur"
+            />
           </div>
 
           <div className="xl:w-1/2 sm:flex sm:justify-center">

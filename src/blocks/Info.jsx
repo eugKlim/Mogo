@@ -1,4 +1,7 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import FacebookIco from '/public/image/global/facebook-ico';
 import TwitterIco from '/public/image/global/twitter-ico';
 import PinterestIco from '/public/image/global/pinterest-ico';
@@ -55,6 +58,36 @@ const Info = () => {
     },
   ];
 
+  const instagramData = [
+    {
+      img: '/image/info/instagram/1.jpg',
+    },
+    {
+      img: '/image/info/instagram/2.jpg',
+    },
+    {
+      img: '/image/info/instagram/3.jpg',
+    },
+    {
+      img: '/image/info/instagram/4.jpg',
+    },
+    {
+      img: '/image/info/instagram/5.jpg',
+    },
+    {
+      img: '/image/info/instagram/6.jpg',
+    },
+    {
+      img: '/image/info/instagram/7.jpg',
+    },
+    {
+      img: '/image/info/instagram/8.jpg',
+    },
+    {
+      img: '/image/info/instagram/9.jpg',
+    },
+  ];
+
   return (
     <div className="pt-16 pb-20  dark:bg-slate-800 dark:text-white">
       <div className="container flex justify-center flex-wrap lg:space-x-12 sm:flex-wrap-reverse">
@@ -72,7 +105,7 @@ const Info = () => {
 
           <div>
             <p className="font-MontserratBold text-lg">
-              15k{' '}
+              15k
               <span className="font-MontserratRegular text-base text-gray-400">
                 followers
               </span>
@@ -127,7 +160,12 @@ const Info = () => {
                   aria-label={data.title}
                 >
                   <div>
-                    <img src={data.image} alt="image" className="min-w-28" />
+                    <LazyLoadImage
+                      alt="image"
+                      src={data.image}
+                      effect="blur"
+                      className="min-w-28"
+                    />
                   </div>
                   <div className="ml-3">
                     <h4 className="uppercase text-gray-500 mb-2 dark:text-white">
@@ -147,15 +185,16 @@ const Info = () => {
           <h3 className="uppercase mb-10">instagram</h3>
 
           <div className="grid grid-cols-[repeat(3,88px)] gap-1">
-            <img src="/image/info/instagram/1.jpg" alt="image" />
-            <img src="/image/info/instagram/2.jpg" alt="image" />
-            <img src="/image/info/instagram/3.jpg" alt="image" />
-            <img src="/image/info/instagram/4.jpg" alt="image" />
-            <img src="/image/info/instagram/5.jpg" alt="image" />
-            <img src="/image/info/instagram/6.jpg" alt="image" />
-            <img src="/image/info/instagram/7.jpg" alt="image" />
-            <img src="/image/info/instagram/8.jpg" alt="image" />
-            <img src="/image/info/instagram/9.jpg" alt="image" />
+            {instagramData.map((data, index) => {
+              return (
+                <LazyLoadImage
+                  alt="image"
+                  src={data.img}
+                  effect="blur"
+                  key={index}
+                />
+              );
+            })}
           </div>
           <a
             href="#"

@@ -1,4 +1,6 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import SplideSlider from '../components/slider/SplideSlider';
 
 const Testimonial = () => {
@@ -26,7 +28,12 @@ const Testimonial = () => {
       key={index}
     >
       <div className="lg:w-[190px] sm:w-full sm:flex sm:justify-center sm:mb-7">
-        <img src={data.image} alt="Image" className="min-w-[190px] h-[200px]" />
+        <LazyLoadImage
+          alt="image"
+          src={data.image}
+          effect="blur"
+          className="min-w-[190px] h-[200px]"
+        />
       </div>
       <div className="px-16 text-xl max-w-[780px]">
         <p className="text-gray-500 font-RobotoLightItalic mb-5">{data.text}</p>
