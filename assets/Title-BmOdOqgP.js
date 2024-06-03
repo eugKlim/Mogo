@@ -1,0 +1,1 @@
+import{j as t}from"./index-CfU0T_NN.js";const l=({uptitle:e,title:s,text:a})=>t.jsxs("div",{className:"pt-24",children:[t.jsx("h2",{className:"upTitle dark:text-white",children:e}),t.jsx("h3",{className:"title title-line dark:text-white",children:s}),t.jsx("p",{className:"down-text dark:text-teal-500",children:a})]});export{l as T};
