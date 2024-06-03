@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 const PopupOptions = () => {
-
   const [isOpen, setIsOpen] = useState(false);
   const togglePopup = () => {
     setIsOpen(!isOpen);
@@ -16,8 +15,7 @@ const PopupOptions = () => {
     setIsOpen(false);
     document.documentElement.style.overflow = '';
   };
-return {isOpen, setIsOpen, togglePopup, closePopup }
-
+  return { isOpen, togglePopup, closePopup };
 };
 
 export default PopupOptions;

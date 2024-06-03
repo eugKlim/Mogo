@@ -2,6 +2,10 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import Title from '../components/title/Title';
+import HoverMobile from '../components/hoverMobile/Hover-Mobile';
+import HoverMobileOpen from '../components/hoverMobile/Hover-Mobile-Open';
+import HoverMobileClose from '../components/hoverMobile/Hover-Mobile-Close';
+
 import FacebookIco from '../../public/image/global/facebook-ico';
 import TwitterIco from '../../public/image/global/twitter-ico';
 import PinterestIco from '../../public/image/global/pinterest-ico';
@@ -24,6 +28,9 @@ const Team = () => {
       work: 'Developer',
     },
   ];
+
+  const { openOrHiddenHover, hoverMobileState } = HoverMobile(teamData);
+
   return (
     <section className="pb-8 lg:pb-24 dark:bg-slate-800 dark:text-white">
       <div className="container">
@@ -39,9 +46,23 @@ const Team = () => {
               <div className="mb-10" key={index}>
                 <div className="relative group bg-cyan-400 max-w-[340px]">
                   <div className="transition-translate duration-300 ease-in-out lg:group-hover:-translate-x-4 lg:group-hover:-translate-y-4">
-                    <LazyLoadImage alt="image" src={data.image} effect="blur" className='inline-block'/>
+                    <LazyLoadImage
+                      alt="image"
+                      src={data.image}
+                      effect="blur"
+                      className="inline-block"
+                    />
+                    <HoverMobileOpen
+                      index={index}
+                      hoverMobileState={hoverMobileState}
+                      openOrHiddenHover={openOrHiddenHover}
+                    />
                   </div>
-                  <div className="absolute top-0 w-full h-full flex items-center flex-col justify-center text-center opacity-0 invisible hover-gradient transition-translate duration-300 ease-in-out lg:group-hover:visible lg:group-hover:opacity-90 lg:group-hover:-translate-y-4 lg:group-hover:-translate-x-4">
+                  <div
+                    className={`${
+                      hoverMobileState[index] ? 'show-hover' : ''
+                    } absolute top-0 w-full h-full flex items-center flex-col justify-center text-center opacity-0 invisible hover-gradient transition-translate duration-300 ease-in-out lg:group-hover:visible lg:group-hover:opacity-90 lg:group-hover:-translate-y-4 lg:group-hover:-translate-x-4`}
+                  >
                     <div className="flex mb-[-1px]">
                       <a
                         href="#"
@@ -75,6 +96,11 @@ const Team = () => {
                       >
                         <InstagramIco className="w-6 h-6" />
                       </a>
+                      <HoverMobileClose
+                        index={index}
+                        hoverMobileState={hoverMobileState}
+                        openOrHiddenHover={openOrHiddenHover}
+                      />
                     </div>
                   </div>
                 </div>

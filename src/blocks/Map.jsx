@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Popup from '../components/popup/Popup';
 import LazyBg from '../components/lazyBg/LazyBg';
 import mapBg from '/image/map/map-bg.jpg';

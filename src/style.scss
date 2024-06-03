@@ -9,6 +9,10 @@
 html {
   overflow-y: scroll;
 }
+.show-hover {
+  opacity: 0.9;
+  visibility: visible;
+}
 .loading-gif {
   text-align: center;
   width: 60px;

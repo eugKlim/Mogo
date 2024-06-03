@@ -4,10 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const Intro = () => {
   const navigate = useNavigate();
 
-  const goToPage = () => {
-    navigate('/about');
-  };
-
   const introItemsData = [
     {
       number: '01',
@@ -41,7 +37,7 @@ const Intro = () => {
           className="block mx-auto bg-transparent border-white border-2 uppercase py-2 px-6 mt-[100px] lg:hover:bg-white lg:hover:text-stone-900 font-MontserratBold"
           title="Learn more"
           aria-label="Learn more"
-          onClick={goToPage}
+          onClick={() => navigate('/about')}
         >
           Learn more
         </button>

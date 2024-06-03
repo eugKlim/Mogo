@@ -42,7 +42,7 @@ const Blog = () => {
         <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-7 auto-cols-auto">
           {blogCardData.map((data, index) => {
             return (
-              <div className="max-w-[340px] mx-auto" key={index}>
+              <div className="max-w-[340px] mx-auto cursor-pointer" key={index}>
                 <div className="relative">
                   <LazyLoadImage
                     alt="Image"

@@ -2,6 +2,9 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import Title from '../components/title/Title';
+import HoverMobile from '../components/hoverMobile/Hover-Mobile';
+import HoverMobileOpen from '../components/hoverMobile/Hover-Mobile-Open';
+import HoverMobileClose from '../components/hoverMobile/Hover-Mobile-Close';
 
 const Work = () => {
   const workData = [
@@ -55,6 +58,7 @@ const Work = () => {
       class: 'relative group',
     },
   ];
+  const { openOrHiddenHover, hoverMobileState } = HoverMobile(workData);
 
   return (
     <section className="sm:bg-gray-100 md:bg-white dark:bg-gray-700 dark:text-white">
@@ -76,8 +80,16 @@ const Work = () => {
                 effect="blur"
                 className="inline-block"
               />
-
-              <div className="absolute transition-opacity duration-500 ease-in-out top-0 left-0 w-full h-full opacity-0  hover-gradient flex justify-center align-center flex-col text-center xl:group-hover:opacity-90">
+              <HoverMobileOpen
+                index={index}
+                hoverMobileState={hoverMobileState}
+                openOrHiddenHover={openOrHiddenHover}
+              />
+              <div
+                className={`${
+                  hoverMobileState[index] ? 'show-hover' : ''
+                } absolute transition duration-500 linear top-0 left-0 w-full h-full opacity-0 invisible hover-gradient flex justify-center align-center flex-col text-center xl:group-hover:opacity-90 xl:group-hover:visible`}
+              >
                 <div>
                   <img src={data.hoverIcon} alt="icon" className="mx-auto" />
                 </div>
@@ -85,6 +97,12 @@ const Work = () => {
                   {data.hoverTitle}
                 </p>
                 <p className="font-RobotoLightItalic">{data.hoverText}</p>
+
+                <HoverMobileClose
+                  index={index}
+                  hoverMobileState={hoverMobileState}
+                  openOrHiddenHover={openOrHiddenHover}
+                />
               </div>
             </div>
           );
