@@ -8,7 +8,7 @@
       let pathSegmentsToKeep = 1;
 
 
-            let l = window.location;
+      let l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
         l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
@@ -17,7 +17,6 @@
         l.hash
       );
     </script>
-
   </head>
   <body></body>
 </html>
