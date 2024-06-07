@@ -1,29 +1,27 @@
 import React from 'react';
 import Title from '../components/title/Title';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 
-import HoverMobile from '../components/hoverMobile/Hover-Mobile';
+import useHoverMobile from '../components/hoverMobile/useHoverMobile';
 import HoverMobileOpen from '../components/hoverMobile/Hover-Mobile-Open';
 import HoverMobileClose from '../components/hoverMobile/Hover-Mobile-Close';
 
 const About = () => {
   const aboutCardData = [
     {
-      img: '/image/about/1.jpg',
+      img: 'image/about/1.webp',
       text: 'super team',
     },
     {
-      img: '/image/about/2.jpg',
+      img: 'image/about/2.webp',
       text: 'super team',
     },
     {
-      img: '/image/about/3.jpg',
+      img: 'image/about/3.webp',
       text: 'super team',
     },
   ];
-
-  const { openOrHiddenHover, hoverMobileState } = HoverMobile(aboutCardData);
+  const { openOrHiddenHover, hoverMobileState } = useHoverMobile(aboutCardData);
 
   return (
     <section className="pb-24 dark:bg-slate-800 dark:text-white">
@@ -43,9 +41,8 @@ const About = () => {
               >
                 <div className="transition-translate duration-300 ease-in-out lg:group-hover:-translate-x-4 lg:group-hover:-translate-y-4 relative">
                   <LazyLoadImage
-                    alt="Пример изображения"
+                    alt="Image"
                     src={data.img}
-                    effect="blur"
                     className="inline"
                   />
 
@@ -68,7 +65,7 @@ const About = () => {
                   />
 
                   <img
-                    src="/image/about/about-team.png"
+                    src="image/about/about-team.webp"
                     alt="Image"
                     className="w-[32px] h-[23px] mx-auto"
                   />

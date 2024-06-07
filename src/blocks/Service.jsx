@@ -1,35 +1,34 @@
 import React from 'react';
 import Title from '../components/title/Title';
-
 const Service = () => {
   const serviceData = [
     {
-      icon: '/image/service/1.png',
+      icon: 'image/service/1.webp',
       title: 'Photography',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     },
     {
-      icon: '/image/service/2.png',
+      icon: 'image/service/2.webp',
       title: 'Web Design',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     },
     {
-      icon: '/image/service/3.png',
+      icon: 'image/service/3.webp',
       title: 'Creativity',
       text: 'Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     },
     {
-      icon: '/image/service/4.png',
+      icon: 'image/service/4.webp',
       title: 'Css/Html',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     },
     {
-      icon: '/image/service/5.png',
+      icon: 'image/service/5.webp',
       title: 'Photography',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     },
     {
-      icon: '/image/service/6.png',
+      icon: 'image/service/6.webp',
       title: 'digital',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     },

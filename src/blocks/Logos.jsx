@@ -1,6 +1,5 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Logos = () => {
   return (
@@ -8,8 +7,7 @@ const Logos = () => {
       <div className="container">
         <LazyLoadImage
           alt="image"
-          src="/image/logos/logos.png"
-          effect="blur"
+          src={'image/logos/logos.webp'}
           className="h-26"
         />
       </div>

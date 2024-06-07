@@ -5,6 +5,7 @@ const AccordionItem = ({ title, content, image, isActive, onClick }) => (
     <div
       className="uppercase flex items-center justify-between span border-b-[1px] p-4 cursor-pointer"
       onClick={onClick}
+      aria-label="open accordion"
     >
       <span className="flex items-center">
         <img src={image} alt="Icon" className="mr-4" />
@@ -15,7 +16,7 @@ const AccordionItem = ({ title, content, image, isActive, onClick }) => (
           isActive ? 'rotate-180' : ''
         }`}
       >
-        <img src="/image/global/arrow-down.png" alt="icon arrow" />
+        <img src={'image/global/arrow-down.webp'} alt="icon arrow" />
       </span>
     </div>
     {isActive && (

@@ -1,6 +1,5 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 import Title from '../components/title/Title';
 
 const Blog = () => {
@@ -10,7 +9,7 @@ const Blog = () => {
       dateMonth: 'JAN',
       title: 'LOREM IPSUM DOLOR SIT AMET',
       text: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      image: '/image/blog/1.jpg',
+      image: 'image/blog/1.webp',
       watch: '12',
       comment: '8',
     },
@@ -19,7 +18,7 @@ const Blog = () => {
       dateMonth: 'JAN',
       title: 'SED DO EIUSMOD TEMPOR',
       text: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      image: '/image/blog/2.jpg',
+      image: 'image/blog/2.webp',
       watch: '22',
       comment: '1',
     },
@@ -28,7 +27,7 @@ const Blog = () => {
       dateMonth: 'JAN',
       title: 'INCIDIDUNT UT LABORE ET DOLORE',
       text: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      image: '/image/blog/3.jpg',
+      image: 'image/blog/3.webp',
       watch: '555',
       comment: '231',
     },
@@ -42,13 +41,14 @@ const Blog = () => {
         <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-7 auto-cols-auto">
           {blogCardData.map((data, index) => {
             return (
-              <div className="max-w-[340px] mx-auto cursor-pointer" key={index}>
+              <div
+                className="max-w-[340px] mx-auto cursor-pointer"
+                key={index}
+                aria-label="open article"
+                title="open article"
+              >
                 <div className="relative">
-                  <LazyLoadImage
-                    alt="Image"
-                    src={data.image}
-                    effect="blur"
-                  />
+                  <LazyLoadImage alt="Image" src={data.image} />
                   <div className="absolute bottom-4 -left-2 inline-block text-center bg-cyan-400 text-white py-1 px-2">
                     <div className="uppercase font-MontserratBold text-2xl">
                       {data.dateNum}
@@ -70,7 +70,7 @@ const Blog = () => {
                   <div className="flex space-x-4">
                     <div className="flex space-x-2 items-center">
                       <img
-                        src="/image/global/watch-ico.svg"
+                        src="image/global/watch-ico.svg"
                         alt="icon watch"
                         className="h-4"
                       />
@@ -80,7 +80,7 @@ const Blog = () => {
                     </div>
                     <div className="flex space-x-2 items-center">
                       <img
-                        src="/image/global/comment-ico.svg"
+                        src="image/global/comment-ico.svg"
                         alt="icon comment"
                         className="h-4"
                       />

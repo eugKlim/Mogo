@@ -1,36 +1,35 @@
 @layer components {
+  .upTitle {
+    @apply text-slate-900 font-KaushanScripts text-3xl text-center mb-2;
+  }
+  .title {
+    @apply text-slate-900 font-MontserratBold text-3xl text-center uppercase;
 
-.upTitle {
-  @apply text-slate-900 font-KaushanScripts text-3xl text-center mb-2;
-}
-.title {
-  @apply text-slate-900 font-MontserratBold text-3xl text-center uppercase;
-
-  &-line {
-    position: relative;
-    &::before {
-      content: '';
-      width: 60px;
-      height: 3px;
-      background-color: #f38181;
-      position: absolute;
-      bottom: -30px;
-      transform: translateX(-50%);
-      left: 50%;
+    &-line {
+      position: relative;
+      &::before {
+        content: '';
+        width: 60px;
+        height: 3px;
+        background-color: #f38181;
+        position: absolute;
+        bottom: -30px;
+        transform: translateX(-50%);
+        left: 50%;
+      }
+    }
+    &-line-intro {
+      position: relative;
+      &::before {
+        content: '';
+        width: 60px;
+        height: 3px;
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        background-color: #fff;
+        bottom: -50px;
+      }
     }
   }
-  &-line-intro {
-    position: relative;
-    &::before {
-      content: '';
-      width: 60px;
-      height: 3px;
-      position: absolute;
-      transform: translateX(-50%);
-      left: 50%;
-      background-color: #fff;
-      bottom: -50px;
-    }
-  }
-}
 }

@@ -24,7 +24,7 @@ const Facts = () => {
     },
   ];
   return (
-    <section className="flex flex-wrap justify-center bg-cyan-400 dark:bg-cyan-900 text-white p-4">
+    <section className="flex flex-wrap justify-center bg-cyan-600 dark:bg-cyan-900 text-white p-4">
       {factsData.map((data, index) => {
         return (
           <div

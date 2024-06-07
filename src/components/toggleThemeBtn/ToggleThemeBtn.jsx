@@ -29,7 +29,7 @@ const ToggleBtn = ({ lightIco, darkIco }) => {
       }`}
       onClick={handleToggle}
     >
-      <div className="toggle-switch-img">
+      <div className="toggle-switch-img" aria-label="toggle theme btn">
         <img
           className=""
           src={isToggled ? lightIco : darkIco}

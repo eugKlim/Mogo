@@ -24,7 +24,7 @@ const SplideSlider = ({ options, slides }) => {
         </ul>
       </div>
       <div className="splide__arrows">
-        <button className="splide__arrow splide__arrow--prev text-white hover:text-gray-700">
+        <button className="splide__arrow splide__arrow--prev text-white hover:text-gray-700" aria-label="prev slide">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -40,7 +40,7 @@ const SplideSlider = ({ options, slides }) => {
             />
           </svg>
         </button>
-        <button className="splide__arrow splide__arrow--next text-white  hover:text-gray-700">
+        <button className="splide__arrow splide__arrow--next text-white  hover:text-gray-700" aria-label="next slide">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

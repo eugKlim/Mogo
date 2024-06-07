@@ -1,30 +1,29 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 
-import FacebookIco from '/public/image/global/facebook-ico';
-import TwitterIco from '/public/image/global/twitter-ico';
-import PinterestIco from '/public/image/global/pinterest-ico';
-import InstagramIco from '/public/image/global/instagram-ico';
-import YoutubeIco from '/public/image/global/youtube-ico';
-import DribbleIco from '/public/image/global/dribble-ico';
+import FacebookIco from '../components/social-icons/facebook-ico';
+import TwitterIco from '../components/social-icons/twitter-ico';
+import PinterestIco from '../components/social-icons/pinterest-ico';
+import InstagramIco from '../components/social-icons/instagram-ico';
+import YoutubeIco from '../components/social-icons/youtube-ico';
+import DribbleIco from '../components/social-icons/dribble-ico';
 
 const Info = () => {
   const infoBlogsData = [
     {
-      image: '/image/info/blogs/1.jpg',
+      image: 'image/info/blogs/1.webp',
       title: 'LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING',
       date: 'Jan 29, 2016',
       link: '#',
     },
     {
-      image: '/image/info/blogs/2.jpg',
+      image: 'image/info/blogs/2.webp',
       title: 'CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR',
       date: 'Jan 12, 2016',
       link: '#',
     },
     {
-      image: '/image/info/blogs/3.jpg',
+      image: 'image/info/blogs/3.webp',
       title: 'SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE',
       date: 'Jan 1, 2016',
       link: '#',
@@ -60,31 +59,31 @@ const Info = () => {
 
   const instagramData = [
     {
-      img: '/image/info/instagram/1.jpg',
+      img: 'image/info/instagram/1.webp',
     },
     {
-      img: '/image/info/instagram/2.jpg',
+      img: 'image/info/instagram/2.webp',
     },
     {
-      img: '/image/info/instagram/3.jpg',
+      img: 'image/info/instagram/3.webp',
     },
     {
-      img: '/image/info/instagram/4.jpg',
+      img: 'image/info/instagram/4.webp',
     },
     {
-      img: '/image/info/instagram/5.jpg',
+      img: 'image/info/instagram/5.webp',
     },
     {
-      img: '/image/info/instagram/6.jpg',
+      img: 'image/info/instagram/6.webp',
     },
     {
-      img: '/image/info/instagram/7.jpg',
+      img: 'image/info/instagram/7.webp',
     },
     {
-      img: '/image/info/instagram/8.jpg',
+      img: 'image/info/instagram/8.webp',
     },
     {
-      img: '/image/info/instagram/9.jpg',
+      img: 'image/info/instagram/9.webp',
     },
   ];
 
@@ -163,7 +162,6 @@ const Info = () => {
                     <LazyLoadImage
                       alt="image"
                       src={data.image}
-                      effect="blur"
                       className="min-w-28"
                     />
                   </div>
@@ -186,14 +184,7 @@ const Info = () => {
 
           <div className="grid grid-cols-[repeat(3,88px)] gap-1">
             {instagramData.map((data, index) => {
-              return (
-                <LazyLoadImage
-                  alt="image"
-                  src={data.img}
-                  effect="blur"
-                  key={index}
-                />
-              );
+              return <LazyLoadImage alt="image" src={data.img} key={index} />;
             })}
           </div>
           <a

@@ -47,6 +47,7 @@ const Popup = ({ isOpen, onClose, children }) => {
         ref={popupOverlayRef}
         onClick={onClose}
         title=""
+        aria-label="close popup"
       >
         <CSSTransition
           in={isOpen}
@@ -60,7 +61,7 @@ const Popup = ({ isOpen, onClose, children }) => {
             ref={popupContentRef}
             onClick={(e) => e.stopPropagation()}
           >
-            <button className="popup-close-button" onClick={onClose}>
+            <button className="popup-close-button" onClick={onClose} aria-label="close popup">
               ✕
             </button>
             {children}

@@ -1,22 +1,22 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import SplideSlider from '../components/slider/SplideSlider';
 
 const Testimonial = () => {
   const testimonialData = [
     {
-      image: '/image/testimonial/image.png',
+      image: 'image/testimonial/image.webp',
       text: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”',
       name: 'Jon Doe',
     },
     {
-      image: '/image/testimonial/image.png',
+      image: 'image/testimonial/image.webp',
       text: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”',
       name: 'Anna Doe',
     },
     {
-      image: '/image/testimonial/image.png',
+      image: 'image/testimonial/image.webp',
       text: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.”',
       name: 'Tommy Doe',
     },
@@ -31,7 +31,6 @@ const Testimonial = () => {
         <LazyLoadImage
           alt="image"
           src={data.image}
-          effect="blur"
           className="min-w-[190px] h-[200px]"
         />
       </div>

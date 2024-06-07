@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Popup from '../components/popup/Popup';
-import PopupOptions from '../components/popup/Popup-Options';
+import usePopup from '../components/popup/usePopup';
 import ToggleBtn from '../components/toggleThemeBtn/ToggleThemeBtn';
 import { NavLink, useNavigate } from 'react-router-dom';
 
@@ -10,8 +10,8 @@ import DarkIcon from '/image/global/dark-icon.svg';
 const Header = () => {
   const navigate = useNavigate();
 
-  const basketPopup = PopupOptions();
-  const searchPopup = PopupOptions();
+  const basketPopup = usePopup();
+  const searchPopup = usePopup();
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
   const updateIsMobile = () => {
@@ -21,7 +21,7 @@ const Header = () => {
   const headerDataLinks = [
     {
       nameLink: 'Home',
-      link: '',
+      link: 'home',
       class: '',
     },
     {
@@ -93,11 +93,14 @@ const Header = () => {
             isActiveBurger ? 'active' : ''
           } bg-dark sm:fixed lg:hidden w-full min-h-screen min-w-screen z-[901]`}
           onClick={clickBurger}
+          aria-label="close popup"
         />
 
         <h1
           className="title text-white sm:text-lg md:text-3xl z-20 cursor-pointer"
           onClick={() => navigate('/')}
+          aria-label="Go to home page"
+          title="Go to Home"
         >
           MoGo
         </h1>
@@ -110,7 +113,6 @@ const Header = () => {
             {headerDataLinks.map((data, index) => {
               return (
                 <li
-                  title={data.nameLink}
                   className={`${data.class} navigation`}
                   aria-label={data.nameLink}
                   key={index}
@@ -130,9 +132,9 @@ const Header = () => {
               onClick={basketPopup.togglePopup}
               className="inline-block lg:hover:text-yellow-500 cursor-pointer"
               title="basket button"
-              aria-label="basket button"
             >
               <svg
+                aria-label="basket button"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -155,13 +157,12 @@ const Header = () => {
             </div>
             {/* search */}
             <div
-              href="#"
               className="inline-block lg:hover:text-yellow-500 cursor-pointer"
               title="search"
-              aria-label="search"
               onClick={searchPopup.togglePopup}
             >
               <svg
+                aria-label="search button"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -183,9 +184,13 @@ const Header = () => {
                   <input
                     type="text"
                     placeholder="Search"
-                    className="w-full p-2 text-black border border-white border-2"
+                    className="w-full p-2 text-black dark:border-white border-2 border-black"
+                    aria-label="search input"
                   />
-                  <button className="bg-green-500 p-3 hover:bg-green-800">
+                  <button
+                    className="bg-green-500 p-3 hover:bg-green-800 -ml-1"
+                    aria-label="search button"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

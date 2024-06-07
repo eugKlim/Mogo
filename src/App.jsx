@@ -1,9 +1,13 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import './fonts.css';
 import './style.scss';
 import ScrollToTop from './components/router/ScrollToTop';
-import './components/lazyBg/LazyBg.scss';
 
 import Header from './blocks/Header';
 import Footer from './blocks/Footer';
@@ -22,7 +26,7 @@ function App() {
   return (
     <div className="h-screen grid grid-rows-[auto_1fr_auto] font-RobotoRegular">
       <div className="pt-14" />
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <ScrollToTop />
         <Header />
         <Suspense
@@ -33,7 +37,8 @@ function App() {
           }
         >
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/home" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/service" element={<ServicePage />} />
             <Route path="/work" element={<WorkPage />} />

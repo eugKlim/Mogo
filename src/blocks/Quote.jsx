@@ -1,7 +1,7 @@
 import React from 'react';
 import SplideSlider from '../components/slider/SplideSlider';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+
 const Quote = () => {
   const quoteData = [
     {
@@ -26,8 +26,7 @@ const Quote = () => {
       <div className="lg:w-[150px] sm:w-full sm:flex sm:justify-center sm:mb-7">
         <LazyLoadImage
           alt="image"
-          src="/image/quote/quote-image.png"
-          effect="blur"
+          src={'image/quote/quote-image.webp'}
           className="min-w-[150px] h-[150px]"
         />
       </div>

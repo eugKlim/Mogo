@@ -1,64 +1,64 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import Title from '../components/title/Title';
-import HoverMobile from '../components/hoverMobile/Hover-Mobile';
+import useHoverMobile from '../components/hoverMobile/useHoverMobile';
 import HoverMobileOpen from '../components/hoverMobile/Hover-Mobile-Open';
 import HoverMobileClose from '../components/hoverMobile/Hover-Mobile-Close';
 
 const Work = () => {
   const workData = [
     {
-      image: '/image/work/1.jpg',
-      hoverIcon: '/image/work/ico.png',
+      image: 'image/work/1.webp',
+      hoverIcon: 'image/work/ico.webp',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group',
     },
     {
-      image: '/image/work/2.jpg',
-      hoverIcon: '/image/work/ico.png',
+      image: 'image/work/2.webp',
+      hoverIcon: 'image/work/ico.webp',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group',
     },
     {
-      image: '/image/work/3.jpg',
-      hoverIcon: '/image/work/ico.png',
+      image: 'image/work/3.webp',
+      hoverIcon: 'image/work/ico.webp',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group row-span-2',
     },
     {
-      image: '/image/work/4.jpg',
-      hoverIcon: '/image/work/ico.png',
+      image: 'image/work/4.webp',
+      hoverIcon: 'image/work/ico.webp',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group',
     },
     {
-      image: '/image/work/5.jpg',
-      hoverIcon: '/image/work/ico.png',
+      image: 'image/work/5.webp',
+      hoverIcon: 'image/work/ico.webp',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group',
     },
     {
-      image: '/image/work/6.jpg',
-      hoverIcon: '/image/work/ico.png',
+      image: 'image/work/6.webp',
+      hoverIcon: 'image/work/ico.webp',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group',
     },
     {
-      image: '/image/work/7.jpg',
-      hoverIcon: '/image/work/ico.png',
+      image: 'image/work/7.webp',
+      hoverIcon: 'image/work/ico.webp',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group',
     },
   ];
-  const { openOrHiddenHover, hoverMobileState } = HoverMobile(workData);
+  const { openOrHiddenHover, hoverMobileState } = useHoverMobile(workData);
 
   return (
     <section className="sm:bg-gray-100 md:bg-white dark:bg-gray-700 dark:text-white">
@@ -77,7 +77,6 @@ const Work = () => {
               <LazyLoadImage
                 alt="image"
                 src={data.image}
-                effect="blur"
                 className="inline-block"
               />
               <HoverMobileOpen
@@ -88,7 +87,7 @@ const Work = () => {
               <div
                 className={`${
                   hoverMobileState[index] ? 'show-hover' : ''
-                } absolute transition duration-500 linear top-0 left-0 w-full h-full opacity-0 invisible hover-gradient flex justify-center align-center flex-col text-center xl:group-hover:opacity-90 xl:group-hover:visible`}
+                } absolute transition-all duration-500 linear top-0 left-0 w-full h-full opacity-0 invisible flex justify-center align-center hover-gradient flex-col text-center xl:group-hover:opacity-90 xl:group-hover:visible cursor-default`}
               >
                 <div>
                   <img src={data.hoverIcon} alt="icon" className="mx-auto" />

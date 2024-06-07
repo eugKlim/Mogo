@@ -1,35 +1,36 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import Title from '../components/title/Title';
-import HoverMobile from '../components/hoverMobile/Hover-Mobile';
+import useHoverMobile from '../components/hoverMobile/useHoverMobile';
 import HoverMobileOpen from '../components/hoverMobile/Hover-Mobile-Open';
 import HoverMobileClose from '../components/hoverMobile/Hover-Mobile-Close';
 
-import FacebookIco from '../../public/image/global/facebook-ico';
-import TwitterIco from '../../public/image/global/twitter-ico';
-import PinterestIco from '../../public/image/global/pinterest-ico';
-import InstagramIco from '../../public/image/global/instagram-ico';
+import FacebookIco from '../components/social-icons/facebook-ico';
+import TwitterIco from '../components/social-icons/twitter-ico';
+import PinterestIco from '../components/social-icons/pinterest-ico';
+import InstagramIco from '../components/social-icons/instagram-ico';
+
 const Team = () => {
   const teamData = [
     {
-      image: '/image/team/1.jpg',
+      image: 'image/team/1.webp',
       name: 'MATTHEW DIX',
       work: 'Graphic Design',
     },
     {
-      image: '/image/team/2.jpg',
+      image: 'image/team/2.webp',
       name: 'CHRISTOPHER CAMPBELL',
       work: 'Branding/UX design',
     },
     {
-      image: '/image/team/3.jpg',
+      image: 'image/team/3.webp',
       name: 'MICHAEL FERTIG',
       work: 'Developer',
     },
   ];
 
-  const { openOrHiddenHover, hoverMobileState } = HoverMobile(teamData);
+  const { openOrHiddenHover, hoverMobileState } = useHoverMobile(teamData);
 
   return (
     <section className="pb-8 lg:pb-24 dark:bg-slate-800 dark:text-white">
@@ -49,7 +50,6 @@ const Team = () => {
                     <LazyLoadImage
                       alt="image"
                       src={data.image}
-                      effect="blur"
                       className="inline-block"
                     />
                     <HoverMobileOpen
