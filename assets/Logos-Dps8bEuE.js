@@ -1,1 +1,0 @@
-import{j as s}from"./index-XK3otX6C.js";import{b as a}from"./index-Cb8KcCEc.js";const m=()=>s.jsx("section",{className:"md:bg-gray-300 md:py-10 sm:hidden md:block",children:s.jsx("div",{className:"container",children:s.jsx(a.LazyLoadImage,{alt:"image",src:"image/logos/logos.png",className:"h-26"})})});export{m as default};
