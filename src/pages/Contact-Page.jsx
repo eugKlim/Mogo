@@ -1,10 +1,10 @@
 import React from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import Info from '../blocks/Info';
+import { Helmet } from 'react-helmet-async';
+import Info from '../components/info/Info';
 
 const ContactPage = () => {
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <title>MoGo - Contact</title>
         <meta name="description" content="Mogo lorem description" />
@@ -14,7 +14,7 @@ const ContactPage = () => {
       <section className="dark:text-white text-slate-500">
         <Info />
       </section>
-    </HelmetProvider>
+    </>
   );
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import Title from '../components/title/Title';
-import Work from '../blocks/Work';
+import Work from '../components/work/Work';
 
 const WorkPage = () => {
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <title>MoGo - Work</title>
         <meta name="description" content="Mogo lorem description" />
@@ -52,7 +52,7 @@ const WorkPage = () => {
           </div>
         </div>
       </section>
-    </HelmetProvider>
+    </>
   );
 };
 

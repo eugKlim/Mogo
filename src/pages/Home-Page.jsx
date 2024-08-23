@@ -1,27 +1,27 @@
 import React, { Suspense, lazy } from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 
 import loadingGif from '/image/global/loading.gif';
 
-import Intro from '../blocks/Intro';
-const About = lazy(() => import('../blocks/About'));
-const Facts = lazy(() => import('../blocks/Facts'));
-const Service = lazy(() => import('../blocks/Service'));
-const Feature = lazy(() => import('../blocks/Feature'));
-const What = lazy(() => import('../blocks/What'));
-const Quote = lazy(() => import('../blocks/Quote'));
-const Team = lazy(() => import('../blocks/Team'));
-const Logos = lazy(() => import('../blocks/Logos'));
-const Testimonial = lazy(() => import('../blocks/Testimonial'));
-const Work = lazy(() => import('../blocks/Work'));
-const Say = lazy(() => import('../blocks/Say'));
-const Blog = lazy(() => import('../blocks/Blog'));
-const Map = lazy(() => import('../blocks/Map'));
-const Info = lazy(() => import('../blocks/Info'));
+import Intro from '../components/intro/Intro';
+const About = lazy(() => import('../components/about/About'));
+const Facts = lazy(() => import('../components/facts/Facts'));
+const Service = lazy(() => import('../components/service/Service'));
+const Feature = lazy(() => import('../components/feature/Feature'));
+const What = lazy(() => import('../components/what/What'));
+const Quote = lazy(() => import('../components/quote/Quote'));
+const Team = lazy(() => import('../components/team/Team'));
+const Logos = lazy(() => import('../components/logos/Logos'));
+const Testimonial = lazy(() => import('../components/testimonial/Testimonial'));
+const Work = lazy(() => import('../components/work/Work'));
+const Say = lazy(() => import('../components/say/Say'));
+const Blog = lazy(() => import('../components/blog/Blog'));
+const Map = lazy(() => import('../components/map/Map'));
+const Info = lazy(() => import('../components/info/Info'));
 
 const HomePage = () => {
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <title>MoGo - Home</title>
         <meta name="description" content="Mogo lorem description" />
@@ -53,7 +53,7 @@ const HomePage = () => {
           <Info />
         </Suspense>
       </section>
-    </HelmetProvider>
+    </>
   );
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import Title from '../components/title/Title';
-import Blog from '../blocks/Blog';
+import Blog from '../components/blog/Blog';
 
 const BlogPage = () => {
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <title>MoGo - Blog</title>
         <meta name="description" content="Mogo lorem description" />
@@ -52,7 +52,7 @@ const BlogPage = () => {
           </div>
         </div>
       </section>
-    </HelmetProvider>
+    </>
   );
 };
 

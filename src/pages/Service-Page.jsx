@@ -1,10 +1,10 @@
 import React from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import Service from '../blocks/Service';
+import { Helmet } from 'react-helmet-async';
+import Service from '../components/service/Service';
 
 const ServicePage = () => {
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <title>MoGo - Service</title>
         <meta name="description" content="Mogo lorem description" />
@@ -14,7 +14,7 @@ const ServicePage = () => {
       <section className="dark:text-white text-slate-500">
         <Service />
       </section>
-    </HelmetProvider>
+    </>
   );
 };
 

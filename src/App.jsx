@@ -1,16 +1,16 @@
 import React, { Suspense, lazy } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from 'react-router-dom';
-import './fonts.css';
-import './style.scss';
+
 import ScrollToTop from './components/router/ScrollToTop';
 
-import Header from './blocks/Header';
-import Footer from './blocks/Footer';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 
 import loadingGif from '/image/global/loading.gif';
 
@@ -24,31 +24,33 @@ const ContactPage = lazy(() => import('./pages/Contact-Page'));
 
 function App() {
   return (
-    <div className="h-screen grid grid-rows-[auto_1fr_auto] font-RobotoRegular">
-      <div className="pt-14" />
-      <Router basename={import.meta.env.BASE_URL}>
-        <ScrollToTop />
-        <Header />
-        <Suspense
-          fallback={
-            <div className="loading-gif">
-              <img src={loadingGif} alt="Loading..." />
-            </div>
-          }
-        >
-          <Routes>
-            <Route path="/" element={<Navigate to="/home" />} />
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/service" element={<ServicePage />} />
-            <Route path="/work" element={<WorkPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
-          <Footer />
-        </Suspense>
-      </Router>
-    </div>
+    <HelmetProvider>
+      <div className="h-screen grid grid-rows-[auto_1fr_auto] font-RobotoRegular">
+        <div className="pt-14" />
+        <Router basename={import.meta.env.BASE_URL}>
+          <ScrollToTop />
+          <Header />
+          <Suspense
+            fallback={
+              <div className="loading-gif">
+                <img src={loadingGif} alt="Loading..." />
+              </div>
+            }
+          >
+            <Routes>
+              <Route path="/" element={<Navigate to="/home" />} />
+              <Route path="/home" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/service" element={<ServicePage />} />
+              <Route path="/work" element={<WorkPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+            <Footer />
+          </Suspense>
+        </Router>
+      </div>
+    </HelmetProvider>
   );
 }
 
