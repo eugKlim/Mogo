@@ -1,75 +1,46 @@
-import React, { useEffect, useRef } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import React, { useEffect } from 'react';
+import Modal from 'react-modal';
+import './Popup.scss';
 
-const Popup = ({ isOpen, onClose, children }) => {
-  const popupOverlayRef = useRef(null);
-  const popupContentRef = useRef(null);
+Modal.setAppElement('#root');
 
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (
-        popupOverlayRef.current &&
-        !popupOverlayRef.current.contains(event.target)
-      ) {
-        onClose();
-      }
-    };
-
-    const handleEscapeKey = (event) => {
-      if (event.keyCode === 27) {
-        onClose();
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleOutsideClick);
-      document.addEventListener('keydown', handleEscapeKey);
-      document.body.classList.add('noScroll');
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
-      document.removeEventListener('keydown', handleEscapeKey);
-      document.body.classList.remove('noScroll');
-    };
-  }, [isOpen, onClose]);
-
+function CustomModal({ isOpen, onRequestClose, title, children }) {
   return (
-    <CSSTransition
-      in={isOpen}
-      timeout={300}
-      classNames="popup-overlay"
-      unmountOnExit
-      nodeRef={popupOverlayRef}
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      contentLabel={title}
+      style={{
+        overlay: {
+          backgroundColor: 'rgba(0, 0, 0, 0.92)',
+          zIndex: 1000,
+        },
+        content: {
+          top: '50%',
+          left: '50%',
+          right: 'auto',
+          bottom: 'auto',
+          marginRight: '-50%',
+          transform: 'translate(-50%, -50%)',
+          borderRadius: '12px',
+          maxWidth: '700px',
+          padding: '0',
+          width: '100%',
+        },
+      }}
     >
-      <div
-        className="popup-overlay"
-        ref={popupOverlayRef}
-        onClick={onClose}
-        title=""
-        aria-label="close popup"
-      >
-        <CSSTransition
-          in={isOpen}
-          timeout={300}
-          classNames="popup-content"
-          unmountOnExit
-          nodeRef={popupContentRef}
+      <div className="popup dark:bg-slate-700 text-black p-10 dark:text-white overflow-y-auto">
+        <button
+          className="popup-close-button"
+          onClick={onRequestClose}
+          aria-label="close popup"
         >
-          <div
-            className="popup-content sm:w-11/12 xl:w-8/12 dark:bg-slate-700 text-black p-10 dark:text-white overflow-y-auto"
-            ref={popupContentRef}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className="popup-close-button" onClick={onClose} aria-label="close popup">
-              ✕
-            </button>
-            {children}
-          </div>
-        </CSSTransition>
+          ✕
+        </button>
+        {children}
       </div>
-    </CSSTransition>
+    </Modal>
   );
-};
+}
 
-export default Popup;
+export default CustomModal;

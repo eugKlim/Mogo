@@ -8,18 +8,22 @@ const Intro = () => {
     {
       number: '01',
       title: 'Intro',
+      process: 60,
     },
     {
       number: '02',
       title: 'About',
+      process: 40,
     },
     {
       number: '03',
       title: 'Work',
+      process: 10,
     },
     {
       number: '04',
       title: 'Contacts',
+      process: 90,
     },
   ];
 
@@ -51,7 +55,10 @@ const Intro = () => {
             return (
               <div className="mt-5 md:w-1/4 w-1/2 px-4" key={index}>
                 <div className="border-t-4 border-white">
-                  <span className="bg-red-500 block w-[30%] h-1 -mt-1"></span>
+                  <span
+                    className="bg-red-500 block   h-1 -mt-1"
+                    style={{ maxWidth: `${data.process}%` }}
+                  ></span>
                 </div>
                 <div className="mt-3">
                   <span className="font-MontserratBold mr-2 text-2xl">

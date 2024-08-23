@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import Popup from '../popup/Popup';
-import usePopup from '../popup/usePopup';
 import ToggleBtn from '../toggleThemeBtn/ToggleThemeBtn';
 import { NavLink, useNavigate } from 'react-router-dom';
+
+import LightIcon from '/image/global/light-icon.svg';
+import DarkIcon from '/image/global/dark-icon.svg';
 
 const Header = () => {
   const navigate = useNavigate();
 
-  const basketPopup = usePopup();
-  const searchPopup = usePopup();
+  // modal
+  const [modalIsOpenSearch, setModalIsOpenSearch] = useState(false);
+  const [modalIsOpenBasket, setModalIsOpenBasket] = useState(false);
+
+  const openModalSearch = () => setModalIsOpenSearch(true);
+  const closeModalSearch = () => setModalIsOpenSearch(false);
+
+  const openModalBasket = () => setModalIsOpenBasket(true);
+  const closeModalBasket = () => setModalIsOpenBasket(false);
+  // /modal
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
   const updateIsMobile = () => {
@@ -123,16 +133,12 @@ const Header = () => {
             })}
           </ul>
           <div className="sm:space-x-4 lg:space-x-6 flex items-center sm:pr-16 lg:pr-0">
-            <ToggleBtn
-              lightIco="./image/global/light-icon.svg"
-              darkIco="./image/global/dark-icon.svg"
-            />
+            <ToggleBtn lightIco={LightIcon} darkIco={DarkIcon} />
 
             {/* basket */}
-            <div
-              onClick={basketPopup.togglePopup}
+            <button
               className="inline-block lg:hover:text-yellow-500 cursor-pointer"
-              title="basket button"
+              onClick={openModalBasket}
             >
               <svg
                 aria-label="basket button"
@@ -149,18 +155,19 @@ const Header = () => {
                   d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
                 />
               </svg>
-              <Popup
-                isOpen={basketPopup.isOpen}
-                onClose={basketPopup.closePopup}
-              >
-                <p>Basket</p>
-              </Popup>
-            </div>
+            </button>
+            <Popup
+              isOpen={modalIsOpenBasket}
+              onRequestClose={closeModalBasket}
+              title="My Basket"
+            >
+              <p>Basket</p>
+            </Popup>
             {/* search */}
-            <div
+            <button
               className="inline-block lg:hover:text-yellow-500 cursor-pointer"
               title="search"
-              onClick={searchPopup.togglePopup}
+              onClick={openModalSearch}
             >
               <svg
                 aria-label="search button"
@@ -177,39 +184,41 @@ const Header = () => {
                   d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                 />
               </svg>
-              <Popup
-                isOpen={searchPopup.isOpen}
-                onClose={searchPopup.closePopup}
-              >
-                <div className="flex items-center">
-                  <input
-                    type="text"
-                    placeholder="Search"
-                    className="w-full p-2 text-black dark:border-white border-2 border-black"
-                    aria-label="search input"
-                  />
-                  <button
-                    className="bg-green-500 p-3 hover:bg-green-800 -ml-1"
-                    aria-label="search button"
+            </button>
+            <Popup
+              isOpen={modalIsOpenSearch}
+              onRequestClose={closeModalSearch}
+              title="My Search"
+            >
+              <div className="flex items-center">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="w-full p-2 text-black dark:border-white border-2 border-black"
+                  aria-label="search input"
+                />
+                <button
+                  className="bg-green-500 p-3 hover:bg-green-800 -ml-1"
+                  aria-label="search button"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-5 h-5"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="w-5 h-5"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </Popup>
-            </div>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </Popup>
+
             {/* / */}
           </div>
 
