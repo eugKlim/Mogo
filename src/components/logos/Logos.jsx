@@ -5,11 +5,11 @@ const Logos = () => {
   return (
     <section className="md:bg-gray-300 md:py-10 sm:hidden md:block">
       <div className="container">
-        <LazyLoadImage
-          alt="image"
-          src={'image/logos/logos.webp'}
-          className="h-26"
-        />
+        <picture className="h-26">
+          <source srcSet="image/logos/logos.avif" type="image/avif" />
+          <source srcSet="image/logos/logos.webp" type="image/webp" />
+          <LazyLoadImage alt="Image" src="image/logos/logos.png" />
+        </picture>
       </div>
     </section>
   );

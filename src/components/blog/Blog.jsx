@@ -9,7 +9,7 @@ const Blog = () => {
       dateMonth: 'JAN',
       title: 'LOREM IPSUM DOLOR SIT AMET',
       text: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      image: 'image/blog/1.webp',
+      image: 'image/blog/1',
       watch: '12',
       comment: '8',
     },
@@ -18,7 +18,7 @@ const Blog = () => {
       dateMonth: 'JAN',
       title: 'SED DO EIUSMOD TEMPOR',
       text: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      image: 'image/blog/2.webp',
+      image: 'image/blog/2',
       watch: '22',
       comment: '1',
     },
@@ -27,7 +27,7 @@ const Blog = () => {
       dateMonth: 'JAN',
       title: 'INCIDIDUNT UT LABORE ET DOLORE',
       text: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      image: 'image/blog/3.webp',
+      image: 'image/blog/3',
       watch: '555',
       comment: '231',
     },
@@ -48,7 +48,12 @@ const Blog = () => {
                 title="open article"
               >
                 <div className="relative">
-                  <LazyLoadImage alt="Image" src={data.image} />
+                  <picture>
+                    <source srcSet={data.image + '.avif'} type="image/avif" />
+                    <source srcSet={data.image + '.webp'} type="image/webp" />
+                    <LazyLoadImage alt="Image" src={data.image + '.jpg'} />
+                  </picture>
+
                   <div className="absolute bottom-4 -left-2 inline-block text-center bg-cyan-400 text-white py-1 px-2">
                     <div className="uppercase font-MontserratBold text-2xl">
                       {data.dateNum}
@@ -74,6 +79,7 @@ const Blog = () => {
                         alt="icon watch"
                         className="h-4"
                       />
+
                       <span className="font-RobotoLightItalic text-base">
                         {data.watch}
                       </span>

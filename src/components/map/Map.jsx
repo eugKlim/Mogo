@@ -1,22 +1,25 @@
 import { useState } from 'react';
 import Popup from '../popup/Popup';
+import useLazyBackgrounds from '../../hooks/useBgCheckFormats';
 
 const Map = () => {
+  useLazyBackgrounds();
   const [modalIsOpenMap, setModalIsOpenMap] = useState(false);
   const openModalMap = () => setModalIsOpenMap(true);
   const closeModalMap = () => setModalIsOpenMap(false);
-
   return (
     <>
       <section
         onClick={openModalMap}
-        className="bg-say-bg bg-cover xl:bg-options flex justify-center items-center flex-col cursor-pointer"
+        className="bg-say-bg bg-cover xl:bg-options flex justify-center items-center flex-col cursor-pointer item-bg"
         aria-label="Open map"
         title="Open map"
+        data-bg="image/map/map-bg.jpg"
       >
         <div className="dark:bg-dark w-full h-full py-[50px]">
           <div className="text-center flex justify-center items-center flex-col">
             <img src="image/map/map-ico.svg" alt="map icon" />
+
             <h2 className="uppercase text-red-500 my-2">Open map</h2>
             <div className="w-[50px] h-1 bg-red-400"></div>
           </div>

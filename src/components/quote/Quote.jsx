@@ -24,11 +24,11 @@ const Quote = () => {
       key={index}
     >
       <div className="lg:w-[150px] sm:w-full sm:flex sm:justify-center sm:mb-7">
-        <LazyLoadImage
-          alt="image"
-          src={'image/quote/quote-image.webp'}
-          className="min-w-[150px] h-[150px]"
-        />
+        <picture>
+          <source srcSet="image/quote/quote-image.avif" type="image/avif" />
+          <source srcSet="image/quote/quote-image.webp" type="image/webp" />
+          <LazyLoadImage alt="Image" src="image/quote/quote-image.png" />
+        </picture>
       </div>
       <div className="px-16 text-xl max-w-[840px]">
         <p className="text-gray-500 font-RobotoLightItalic mb-5">{data.text}</p>

@@ -9,50 +9,50 @@ import HoverMobileClose from '../hoverMobile/Hover-Mobile-Close';
 const Work = () => {
   const workData = [
     {
-      image: 'image/work/1.webp',
-      hoverIcon: 'image/work/ico.webp',
+      image: 'image/work/1',
+      hoverIcon: 'image/work/ico',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group',
     },
     {
-      image: 'image/work/2.webp',
-      hoverIcon: 'image/work/ico.webp',
+      image: 'image/work/2',
+      hoverIcon: 'image/work/ico',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group',
     },
     {
-      image: 'image/work/3.webp',
-      hoverIcon: 'image/work/ico.webp',
+      image: 'image/work/3',
+      hoverIcon: 'image/work/ico',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group row-span-2',
     },
     {
-      image: 'image/work/4.webp',
-      hoverIcon: 'image/work/ico.webp',
+      image: 'image/work/4',
+      hoverIcon: 'image/work/ico',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group',
     },
     {
-      image: 'image/work/5.webp',
-      hoverIcon: 'image/work/ico.webp',
+      image: 'image/work/5',
+      hoverIcon: 'image/work/ico',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group',
     },
     {
-      image: 'image/work/6.webp',
-      hoverIcon: 'image/work/ico.webp',
+      image: 'image/work/6',
+      hoverIcon: 'image/work/ico',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group',
     },
     {
-      image: 'image/work/7.webp',
-      hoverIcon: 'image/work/ico.webp',
+      image: 'image/work/7',
+      hoverIcon: 'image/work/ico',
       hoverTitle: 'creatively designed',
       hoverText: 'Lorem ipsum dolor sit',
       class: 'relative group',
@@ -74,11 +74,16 @@ const Work = () => {
         {workData.map((data, index) => {
           return (
             <div className={data.class} key={index}>
-              <LazyLoadImage
-                alt="image"
-                src={data.image}
-                className="inline-block"
-              />
+              <picture>
+                <source srcSet={data.image + '.avif'} type="image/avif" />
+                <source srcSet={data.image + '.webp'} type="image/webp" />
+                <LazyLoadImage
+                  alt="Image"
+                  src={data.image + '.jpg'}
+                  className="inline-block"
+                />
+              </picture>
+
               <HoverMobileOpen
                 index={index}
                 hoverMobileState={hoverMobileState}
@@ -90,7 +95,21 @@ const Work = () => {
                 } absolute transition-all duration-500 linear top-0 left-0 w-full h-full opacity-0 invisible flex justify-center align-center hover-gradient flex-col text-center xl:group-hover:opacity-90 xl:group-hover:visible cursor-default`}
               >
                 <div>
-                  <img src={data.hoverIcon} alt="icon" className="mx-auto" />
+                  <picture>
+                    <source
+                      srcSet={data.hoverIcon + '.avif'}
+                      type="image/avif"
+                    />
+                    <source
+                      srcSet={data.hoverIcon + '.webp'}
+                      type="image/webp"
+                    />
+                    <img
+                      alt="Image"
+                      src={data.hoverIcon + '.png'}
+                      className="mx-auto"
+                    />
+                  </picture>
                 </div>
                 <p className="uppercase font-MontserratBold my-2">
                   {data.hoverTitle}

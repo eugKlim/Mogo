@@ -9,15 +9,15 @@ import HoverMobileClose from '../hoverMobile/Hover-Mobile-Close';
 const About = () => {
   const aboutCardData = [
     {
-      img: 'image/about/1.webp',
+      img: 'image/about/1',
       text: 'super team',
     },
     {
-      img: 'image/about/2.webp',
+      img: 'image/about/2',
       text: 'super team',
     },
     {
-      img: 'image/about/3.webp',
+      img: 'image/about/3',
       text: 'super team',
     },
   ];
@@ -40,11 +40,11 @@ const About = () => {
                 key={index}
               >
                 <div className="transition-translate duration-300 ease-in-out lg:group-hover:-translate-x-4 lg:group-hover:-translate-y-4 relative">
-                  <LazyLoadImage
-                    alt="Image"
-                    src={data.img}
-                    className="inline"
-                  />
+                  <picture>
+                    <source srcSet={data.img + '.avif'} type="image/avif" />
+                    <source srcSet={data.img + '.webp'} type="image/webp" />
+                    <LazyLoadImage alt="Image" src={data.img + '.jpg'} />
+                  </picture>
 
                   <HoverMobileOpen
                     index={index}
@@ -64,11 +64,24 @@ const About = () => {
                     openOrHiddenHover={openOrHiddenHover}
                   />
 
-                  <img
+                  {/* <img
                     src="image/about/about-team.webp"
                     alt="Image"
                     className="w-[32px] h-[23px] mx-auto"
-                  />
+                  /> */}
+
+                  <picture className="w-[32px] h-[23px] mx-auto">
+                    <source
+                      srcSet="image/about/about-team.avif"
+                      type="image/avif"
+                    />
+                    <source
+                      srcSet="image/about/about-team.webp"
+                      type="image/webp"
+                    />
+                    <img alt="Image" src="image/about/about-team.png" />
+                  </picture>
+
                   <p className="uppercase font-MontserratBold mt-1">
                     {data.text}
                   </p>

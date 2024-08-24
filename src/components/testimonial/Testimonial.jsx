@@ -6,17 +6,17 @@ import SplideSlider from '../slider/SplideSlider';
 const Testimonial = () => {
   const testimonialData = [
     {
-      image: 'image/testimonial/image.webp',
+      image: 'image/testimonial/image',
       text: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”',
       name: 'Jon Doe',
     },
     {
-      image: 'image/testimonial/image.webp',
+      image: 'image/testimonial/image',
       text: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”',
       name: 'Anna Doe',
     },
     {
-      image: 'image/testimonial/image.webp',
+      image: 'image/testimonial/image',
       text: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.”',
       name: 'Tommy Doe',
     },
@@ -28,15 +28,21 @@ const Testimonial = () => {
       key={index}
     >
       <div className="lg:w-[190px] sm:w-full sm:flex sm:justify-center sm:mb-7">
-        <LazyLoadImage
-          alt="image"
-          src={data.image}
-          className="min-w-[190px] h-[200px]"
-        />
+        <picture>
+          <source srcSet={data.image + '.avif'} type="image/avif" />
+          <source srcSet={data.image + '.webp'} type="image/webp" />
+          <LazyLoadImage
+            alt="Image"
+            src={data.image + '.png'}
+            className="min-w-[190px] h-[200px]"
+          />
+        </picture>
       </div>
       <div className="px-16 text-xl max-w-[780px]">
         <p className="text-gray-500 font-RobotoLightItalic mb-5">{data.text}</p>
-        <p className="font-KaushanScripts left-decorative-line pl-20">{data.name}</p>
+        <p className="font-KaushanScripts left-decorative-line pl-20">
+          {data.name}
+        </p>
       </div>
     </div>
   ));

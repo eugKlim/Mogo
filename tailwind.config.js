@@ -11,12 +11,6 @@ export default {
         RobotoLightItalic: ['"Roboto-LightItalic"', 'sans-serif'],
         RobotoRegular: ['"Roboto-Regular"', 'sans-serif'],
       },
-      backgroundImage: {
-        'intro-bg': "url('/image/intro/intro-bg.webp')",
-        'feature-bg': "url('/image/feature/feature-bg.webp')",
-        'say-bg': "url('/image/say/say-bg.webp')",
-        'map-bg': "url('/image/map/map-bg.webp')",
-      },
       backgroundSize: {
         full: '100% 100%',
       },

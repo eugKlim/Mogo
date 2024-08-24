@@ -11,19 +11,19 @@ import DribbleIco from '../social-icons/dribble-ico';
 const Info = () => {
   const infoBlogsData = [
     {
-      image: 'image/info/blogs/1.webp',
+      image: 'image/info/blogs/1',
       title: 'LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING',
       date: 'Jan 29, 2016',
       link: '#',
     },
     {
-      image: 'image/info/blogs/2.webp',
+      image: 'image/info/blogs/2',
       title: 'CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR',
       date: 'Jan 12, 2016',
       link: '#',
     },
     {
-      image: 'image/info/blogs/3.webp',
+      image: 'image/info/blogs/3',
       title: 'SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE',
       date: 'Jan 1, 2016',
       link: '#',
@@ -59,31 +59,31 @@ const Info = () => {
 
   const instagramData = [
     {
-      img: 'image/info/instagram/1.webp',
+      img: 'image/info/instagram/1',
     },
     {
-      img: 'image/info/instagram/2.webp',
+      img: 'image/info/instagram/2',
     },
     {
-      img: 'image/info/instagram/3.webp',
+      img: 'image/info/instagram/3',
     },
     {
-      img: 'image/info/instagram/4.webp',
+      img: 'image/info/instagram/4',
     },
     {
-      img: 'image/info/instagram/5.webp',
+      img: 'image/info/instagram/5',
     },
     {
-      img: 'image/info/instagram/6.webp',
+      img: 'image/info/instagram/6',
     },
     {
-      img: 'image/info/instagram/7.webp',
+      img: 'image/info/instagram/7',
     },
     {
-      img: 'image/info/instagram/8.webp',
+      img: 'image/info/instagram/8',
     },
     {
-      img: 'image/info/instagram/9.webp',
+      img: 'image/info/instagram/9',
     },
   ];
 
@@ -159,11 +159,11 @@ const Info = () => {
                   aria-label={data.title}
                 >
                   <div>
-                    <LazyLoadImage
-                      alt="image"
-                      src={data.image}
-                      className="min-w-28"
-                    />
+                    <picture>
+                      <source srcSet={data.image + '.avif'} type="image/avif" />
+                      <source srcSet={data.image + '.webp'} type="image/webp" />
+                      <LazyLoadImage alt="Image" src={data.image + '.jpg'} />
+                    </picture>
                   </div>
                   <div className="ml-3">
                     <h4 className="uppercase text-gray-500 mb-2 dark:text-white">
@@ -184,7 +184,13 @@ const Info = () => {
 
           <div className="grid grid-cols-[repeat(3,88px)] gap-1">
             {instagramData.map((data, index) => {
-              return <LazyLoadImage alt="image" src={data.img} key={index} />;
+              return (
+                <picture key={index}>
+                  <source srcSet={data.img + '.avif'} type="image/avif" />
+                  <source srcSet={data.img + '.webp'} type="image/webp" />
+                  <LazyLoadImage alt="Image" src={data.img + '.jpg'} />
+                </picture>
+              );
             })}
           </div>
           <a

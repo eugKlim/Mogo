@@ -1,36 +1,41 @@
 import React from 'react';
 import Title from '../title/Title';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import useLazyBackgrounds from '../../hooks/useBgCheckFormats';
 
 const Say = () => {
+  useLazyBackgrounds();
   const sayData = [
     {
-      image: 'image/say/1.webp',
+      image: 'image/say/1',
       name: 'Nick Karvounis',
       work: 'Graphic Design',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.',
     },
     {
-      image: 'image/say/2.webp',
+      image: 'image/say/2',
       name: 'Jaelynn Castillo',
       work: 'Graphic Design',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.',
     },
     {
-      image: 'image/say/3.webp',
+      image: 'image/say/3',
       name: 'Mike Petrucci',
       work: 'Graphic Design',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.',
     },
     {
-      image: 'image/say/4.webp',
+      image: 'image/say/4',
       name: 'Matthew Dix',
       work: 'Graphic Design',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.',
     },
   ];
   return (
-    <section className="bg-say-bg bg-cover xl:bg-options ">
+    <section
+      className="bg-cover xl:bg-options item-bg"
+      data-bg="image/say/say-bg.jpg"
+    >
       <div className="dark:bg-dark pb-8">
         <div className="container">
           <Title uptitle="Happy Clients" title="What people say" />
@@ -42,11 +47,15 @@ const Say = () => {
                   key={index}
                 >
                   <div className="md:mr-[32px] sm:mx-auto sm:mb-4">
-                    <LazyLoadImage
-                      alt="image"
-                      src={data.image}
-                      className="min-w-[110px] h-[110px]"
-                    />
+                    <picture>
+                      <source srcSet={data.image + '.avif'} type="image/avif" />
+                      <source srcSet={data.image + '.webp'} type="image/webp" />
+                      <LazyLoadImage
+                        alt="Image"
+                        src={data.image + '.png'}
+                        className="min-w-[110px] h-[110px]"
+                      />
+                    </picture>
                   </div>
                   <div>
                     <p className="font-MontserratBold text-lg dark:text-white">

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import useLazyBackgrounds from '../../hooks/useBgCheckFormats';
 const Intro = () => {
   const navigate = useNavigate();
+  useLazyBackgrounds();
 
   const introItemsData = [
     {
@@ -29,7 +30,8 @@ const Intro = () => {
 
   return (
     <section
-      className={`bg-intro-bg bg-options min-w-full mt-[-150px]   text-white  sm:bg-cover`}
+      className={`bg-options min-w-full mt-[-150px]   text-white  sm:bg-cover item-bg`}
+      data-bg="image/intro/intro-bg.jpg"
     >
       <div className="dark:bg-dark pb-9 pt-[300px]">
         <div>
