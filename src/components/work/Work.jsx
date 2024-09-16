@@ -61,7 +61,7 @@ const Work = () => {
   const { openOrHiddenHover, hoverMobileState } = useHoverMobile(workData);
 
   return (
-    <section className="sm:bg-gray-100 md:bg-white dark:bg-gray-700 dark:text-white">
+    <section className="sm:bg-gray-100 md:bg-white dark:bg-gray-700 dark:text-white min-h-[516px]">
       <div className="container">
         <Title
           uptitle="What we do"

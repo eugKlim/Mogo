@@ -1,32 +1,24 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Modal from 'react-modal';
 import './Popup.scss';
 
 Modal.setAppElement('#root');
 
-function CustomModal({ isOpen, onRequestClose, title, children }) {
+function CustomModal({ isOpen, onRequestClose, children }) {
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      contentLabel={title}
-      style={{
-        overlay: {
-          backgroundColor: 'rgba(0, 0, 0, 0.92)',
-          zIndex: 1000,
-        },
-        content: {
-          top: '50%',
-          left: '50%',
-          right: 'auto',
-          bottom: 'auto',
-          marginRight: '-50%',
-          transform: 'translate(-50%, -50%)',
-          borderRadius: '12px',
-          maxWidth: '700px',
-          padding: '0',
-          width: '100%',
-        },
+      closeTimeoutMS={300}
+      overlayClassName={{
+        base: 'modal-overlay',
+        afterOpen: 'modal-overlay-open',
+        beforeClose: 'modal-overlay-close',
+      }}
+      className={{
+        base: 'modal-content',
+        afterOpen: 'modal-content-open',
+        beforeClose: 'modal-content-close',
       }}
     >
       <div className="popup dark:bg-slate-700 text-black p-10 dark:text-white overflow-y-auto">

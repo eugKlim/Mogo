@@ -105,7 +105,7 @@ const Header = () => {
 
         <h1
           className="title text-white sm:text-lg md:text-3xl z-20 cursor-pointer"
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/home')}
           aria-label="Go to home page"
           title="Go to Home"
         >

@@ -11,6 +11,7 @@ const Say = () => {
       name: 'Nick Karvounis',
       work: 'Graphic Design',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.',
+      animation: { x: -100, y: -100 },
     },
     {
       image: 'image/say/2',
@@ -33,7 +34,7 @@ const Say = () => {
   ];
   return (
     <section
-      className="bg-cover xl:bg-options item-bg"
+      className="bg-cover xl:bg-options item-bg overflow-hidden min-h-[812px]"
       data-bg="image/say/say-bg.jpg"
     >
       <div className="dark:bg-dark pb-8">

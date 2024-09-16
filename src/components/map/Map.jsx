@@ -11,7 +11,7 @@ const Map = () => {
     <>
       <section
         onClick={openModalMap}
-        className="bg-say-bg bg-cover xl:bg-options flex justify-center items-center flex-col cursor-pointer item-bg"
+        className="bg-say-bg bg-cover xl:bg-options flex justify-center items-center flex-col cursor-pointer item-bg min-h-[167px]"
         aria-label="Open map"
         title="Open map"
         data-bg="image/map/map-bg.jpg"

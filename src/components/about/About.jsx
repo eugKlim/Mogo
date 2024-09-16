@@ -24,7 +24,7 @@ const About = () => {
   const { openOrHiddenHover, hoverMobileState } = useHoverMobile(aboutCardData);
 
   return (
-    <section className="pb-24 dark:bg-slate-800 dark:text-white">
+    <section className="pb-24 dark:bg-slate-800 dark:text-white min-h-64">
       <div className="container">
         <Title
           uptitle="What we do"
@@ -63,12 +63,6 @@ const About = () => {
                     hoverMobileState={hoverMobileState}
                     openOrHiddenHover={openOrHiddenHover}
                   />
-
-                  {/* <img
-                    src="image/about/about-team.webp"
-                    alt="Image"
-                    className="w-[32px] h-[23px] mx-auto"
-                  /> */}
 
                   <picture className="w-[32px] h-[23px] mx-auto">
                     <source

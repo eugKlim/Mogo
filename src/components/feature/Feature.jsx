@@ -7,7 +7,7 @@ const Feature = () => {
   useLazyBackgrounds();
   return (
     <section
-      className="bg-feature-bg bg-options bg-cover min-w-full darkBgOverlay mx-auto item-bg"
+      className="bg-feature-bg bg-options bg-cover min-w-full darkBgOverlay mx-auto item-bg md:min-h-[847px]"
       data-bg="image/feature/feature-bg.jpg"
     >
       <div className="dark:bg-dark">

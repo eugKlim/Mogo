@@ -12,8 +12,6 @@ import ScrollToTop from './components/router/ScrollToTop';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 
-import loadingGif from '/image/global/loading.gif';
-
 // pages
 const AboutPage = lazy(() => import('./pages/About-Page'));
 const HomePage = lazy(() => import('./pages/Home-Page'));
@@ -33,7 +31,7 @@ function App() {
           <Suspense
             fallback={
               <div className="loading-gif">
-                <img src={loadingGif} alt="Loading..." />
+                <img src="image/global/loading.gif" alt="Loading..." />
               </div>
             }
           >

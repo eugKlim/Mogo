@@ -35,17 +35,17 @@ const What = () => {
           text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         />
 
-        <div className="xl:flex xl:items-center xl:space-x-6">
+        <div className="xl:flex xl:items-center xl:space-x-6 overflow-hidden">
           <div className="xl:w-1/2 sm:flex sm:justify-center">
-            <picture>
-              <source srcSet="image/what/image.avif" type="image/avif" />
-              <source srcSet="image/what/image.webp" type="image/webp" />
-              <LazyLoadImage alt="Image" src="image/what/image.jpg" />
-            </picture>
+              <picture>
+                <source srcSet="image/what/image.avif" type="image/avif" />
+                <source srcSet="image/what/image.webp" type="image/webp" />
+                <LazyLoadImage alt="Image" src="image/what/image.jpg" />
+              </picture>
           </div>
 
           <div className="xl:w-1/2 sm:flex sm:justify-center">
-            <Accordion items={whatAccordion} imageFormat={'.png'} />
+              <Accordion items={whatAccordion} imageFormat={'.png'} />
           </div>
         </div>
       </div>

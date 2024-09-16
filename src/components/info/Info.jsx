@@ -88,7 +88,7 @@ const Info = () => {
   ];
 
   return (
-    <div className="pt-16 pb-20  dark:bg-slate-800 dark:text-white">
+    <div className="pt-16 pb-20  dark:bg-slate-800 dark:text-white min-h-[430px]">
       <div className="container flex justify-center flex-wrap lg:space-x-12 sm:flex-wrap-reverse">
         {/* 1 */}
         <section className="xl:w-1/3 mb-10 md:max-w-2/4">

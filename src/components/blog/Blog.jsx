@@ -34,7 +34,7 @@ const Blog = () => {
   ];
 
   return (
-    <section className="pb-20 dark:bg-slate-800 dark:text-white">
+    <section className="pb-20 dark:bg-slate-800 dark:text-white min-h-[388px]">
       <div className="container">
         <Title uptitle="Follow Us" title="Latest Blog" />
 
