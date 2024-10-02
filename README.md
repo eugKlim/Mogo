@@ -64,7 +64,7 @@
 
 [🔗 Ссылка на сайт](https://eugklim.github.io/Mogo/?/home) <br> <br>
 
-**PageSpeed Insights:** [ссылка pageSpeed](https://pagespeed.web.dev/analysis/https-eugklim-github-io-Mogo/a8bmzgceqd?hl=ru&form_factor=desktop)
+**PageSpeed Insights:** [ссылка pageSpeed](https://pagespeed.web.dev/?hl=ru)
 
 
 
